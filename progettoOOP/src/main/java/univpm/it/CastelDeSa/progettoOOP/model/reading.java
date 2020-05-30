@@ -5,6 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
+import java.util.ArrayList;
 
 public class reading {
 	
@@ -20,14 +21,18 @@ public class reading {
 		return str;
 	}
 	
-	public static String readFile(String file) throws IOException {
-		String str=new String();
+	public ArrayList<post> readFile(String file) throws IOException {
+		ArrayList<post> post=new ArrayList<post>();
+		String[] tokens=null;
 		BufferedReader in= new BufferedReader(new FileReader(file));
 		String line;
 		while((line=in.readLine())!=null) {
-			str+=line;
+			tokens=line.split(";");
 		}
-		return str;
+		for(String token : tokens) {
+			post.add(new post(token));
+		}
+		return post;
 	}
 
 }

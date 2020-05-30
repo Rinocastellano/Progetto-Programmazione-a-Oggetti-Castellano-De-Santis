@@ -13,6 +13,7 @@ import java.text.SimpleDateFormat;
 import java.time.Instant;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -45,6 +46,62 @@ public class temporizationPosting {
 			 newPost=formatterFromPosting.format(newPostFormatted);
 		}
 		url="https://graph.facebook.com/107920467600716/feed?access_token=EAAkZCLlHE3QkBAN7MHVJMsdXcCEBqcMruXZBqZA1cqD1lD3C35woAG5JOZBkEMGA7aJcZBfj6ma9pgZBBhYZAzcRUhMYEZCtQJ20eyWUZBx20kVghInDdFnvLM8kZC9xLen6yE1D1Nb2cyG6IZBWsx75ZCCFehTV0HSH2c2GYDFSqTcmJ5CSw1pFY30yBdABdlOQa4rgmx93QkQSMwZDZD&message="+message+"&scheduled_publish_time="+newPost;
+		
+		//lettura da file//
+
+		
+		ArrayList<post> postRandom=parsing.start(reading.readFile("C:\\Users\\vito\\Desktop\\jsonrandom.txt"));
+
+		try (BufferedReader in = new BufferedReader(new FileReader(path))) {
+			String testo;
+			String[] token;
+			List<String> elenco = new ArrayList<String>();
+			while ((testo = in.readLine()) != null) {
+
+				token = testo.split("\n");
+
+				for (String tokens : token) {
+					System.out.println(tokens);
+
+					elenco.add(tokens);
+				}
+			}
+
+			// randomizzazione dei post//
+			int n = elenco.size();
+			Vector<Integer> numeri = new Vector<Integer>();
+			Random random = new Random();
+			int caso = random.nextInt(n);
+
+			for (int l = 0; l < elenco.size(); l++) {
+
+				do {
+
+					caso = random.nextInt(n);
+
+				} while (numeri.contains(caso));
+
+				numeri.add(caso);
+
+				System.out.println(caso);
+
+				String message = elenco.get(caso);
+
+				URL url = new URL(
+						"https://graph.facebook.com/107920467600716/feed?access_token=EAAkZCLlHE3QkBAN7MHVJMsdXcCEBqcMruXZBqZA1cqD1lD3C35woAG5JOZBkEMGA7aJcZBfj6ma9pgZBBhYZAzcRUhMYEZCtQJ20eyWUZBx20kVghInDdFnvLM8kZC9xLen6yE1D1Nb2cyG6IZBWsx75ZCCFehTV0HSH2c2GYDFSqTcmJ5CSw1pFY30yBdABdlOQa4rgmx93QkQSMwZDZD&message="
+								+ message + "&scheduled_publish_time=" + newPost);
+				HttpURLConnection con = (HttpURLConnection) url.openConnection();
+				con.setRequestMethod("POST");
+
+			}
+
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
 		
 		
 		/*
