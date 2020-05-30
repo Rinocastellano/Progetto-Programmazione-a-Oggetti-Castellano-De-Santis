@@ -12,6 +12,9 @@ public class post {
 		this.id=i;
 		this.message=m;
 	}
+	public post(String m) {
+		this.message=m;
+	}
 
 	public String getCreated_time() {
 		return created_time;

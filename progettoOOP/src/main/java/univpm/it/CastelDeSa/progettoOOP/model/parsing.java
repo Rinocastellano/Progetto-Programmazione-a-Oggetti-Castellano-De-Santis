@@ -17,25 +17,21 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class parsing {
 	 
-    public static void start(urlReader url) throws Exception {
+    public static ArrayList<post> start(String source) throws Exception {
  
 
-    	List<post> posts = new ArrayList<post>();
-    	List<metadata> metadatas = new ArrayList<metadata>();
-    	
-    	//leggo file dei post ed ottengo una stringa con array di oggetti
-    	String str = url.read();
+    	ArrayList<post> posts = new ArrayList<post>();
+    	ArrayList<metadata> metadatas = new ArrayList<metadata>();
     			
     	//inserimento JSONObj in arraylist posts
     	try {
-			JSONObject obj = new JSONObject(str);
+			JSONObject obj = new JSONObject(source);
 			JSONArray t=obj.getJSONArray("data");
 			for(int i=0; i<t.length();i++){
 				JSONObject res = obj.getJSONArray("data").getJSONObject(i);
 				ObjectMapper mapper= new ObjectMapper();
 				mapper.findAndRegisterModules();
-				post post = mapper.readValue(res.toString(),post.class);
-				posts.add(post);
+				posts.add(mapper.readValue(res.toString(),post.class));
 			}
 			System.out.println(posts);
     } catch (JSONException e) {
@@ -58,6 +54,7 @@ public class parsing {
     	metadatas.add(new metadata("message","content of post","String"));
     	metadatas.add(new metadata("id","post identificator","String"));
     	
+    	return posts;
     }
 }
 
