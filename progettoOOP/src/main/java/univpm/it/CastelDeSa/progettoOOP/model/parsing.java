@@ -56,10 +56,5 @@ public class parsing {
     	
     	return posts;
     }
-    
-    public ArrayList<post> letturaDaFile(String str){
-    	ArrayList<post> post= new ArrayList<post>;
-    	
-    }
 }
 

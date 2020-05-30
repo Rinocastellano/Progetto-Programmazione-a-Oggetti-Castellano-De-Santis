@@ -16,12 +16,16 @@ import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Random;
 
 public class temporizationPosting {
-	public static void main(String args[]) throws IOException {
-		String message="Ciao è un post super programmato";
-		String newPost="2020-05-30T15:38:50";
-		String last="2020-05-21T15:40:50+0000";
+	
+	public void temporizzatedPosting(int year, int month, int day, int hour, int minute, int second) throws IOException {
+		ArrayList<post> post= new ArrayList<post>(); //lo toglieremo, abbiamo già post
+		
+		String newCreatedTime=year+"-"+month+"-"+day+"T"+hour+":"+minute+":"+second;	
+		post lastPost=post.get(0);
+		String lastCreatedTime=lastPost.getCreated_time();//lo toglieremo
 		String url=null;
 		Date newPostFormatted=null;
 		Date lastPostFormatted=null;
@@ -30,8 +34,8 @@ public class temporizationPosting {
 		
 		//trasformiamo le stringhe in date per fare i calcoli
 		try {
-			newPostFormatted = formatterFromPosting.parse(newPost);
-			lastPostFormatted=formatterFromRecord.parse(last);
+			newPostFormatted = formatterFromPosting.parse(newCreatedTime);
+			lastPostFormatted=formatterFromRecord.parse(lastCreatedTime);
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -43,32 +47,41 @@ public class temporizationPosting {
 			 calendar.setTime(lastPostFormatted);
 			 calendar.add(Calendar.HOUR_OF_DAY, 4);
 			 newPostFormatted=calendar.getTime();
-			 newPost=formatterFromPosting.format(newPostFormatted);
+			 newCreatedTime=formatterFromPosting.format(newPostFormatted);
 		}
-		url="https://graph.facebook.com/107920467600716/feed?access_token=EAAkZCLlHE3QkBAN7MHVJMsdXcCEBqcMruXZBqZA1cqD1lD3C35woAG5JOZBkEMGA7aJcZBfj6ma9pgZBBhYZAzcRUhMYEZCtQJ20eyWUZBx20kVghInDdFnvLM8kZC9xLen6yE1D1Nb2cyG6IZBWsx75ZCCFehTV0HSH2c2GYDFSqTcmJ5CSw1pFY30yBdABdlOQa4rgmx93QkQSMwZDZD&message="+message+"&scheduled_publish_time="+newPost;
+
 		
 		//lettura da file//
 
 		
-		ArrayList<post> postRandom=parsing.start(reading.readFile("C:\\Users\\vito\\Desktop\\jsonrandom.txt"));
+		ArrayList<String> postRandom = reading.readFile("C:\\Users\\vito\\Desktop\\jsonrandom.txt");
 
-		try (BufferedReader in = new BufferedReader(new FileReader(path))) {
-			String testo;
-			String[] token;
-			List<String> elenco = new ArrayList<String>();
-			while ((testo = in.readLine()) != null) {
-
-				token = testo.split("\n");
-
-				for (String tokens : token) {
-					System.out.println(tokens);
-
-					elenco.add(tokens);
-				}
-			}
-
+		
+		//scelta post random da postare
+		Random random = new Random();
+		int num=random.nextInt(postRandom.size());
+		String message=postRandom.get(num);
+		System.out.println(message);
+		
+		//rimozione post random scelto
+		postRandom.remove(num);
+		
+		//riscrittura del file
+		writing.writingFile("C:\\Users\\vito\\Desktop\\jsonrandom.txt", postRandom);
+		
+		//richiesta posting
+		url="https://graph.facebook.com/107920467600716/feed?access_token=EAAkZCLlHE3QkBAN7MHVJMsdXcCEBqcMruXZBqZA1cqD1lD3C35woAG5JOZBkEMGA7aJcZBfj6ma9pgZBBhYZAzcRUhMYEZCtQJ20eyWUZBx20kVghInDdFnvLM8kZC9xLen6yE1D1Nb2cyG6IZBWsx75ZCCFehTV0HSH2c2GYDFSqTcmJ5CSw1pFY30yBdABdlOQa4rgmx93QkQSMwZDZD&message="+message+"&scheduled_publish_time="+newCreatedTime;
+		//...da finire, problemi con connessione per posting, otterrò anche un id
+		String indexPost="";
+		
+		//qualora la richiesta fosse accettata -> inserimento post in arraylist post
+		post.add(0, new post(newCreatedTime,indexPost,message));
+		
+		
+		System.out.println(post);
+		
 			// randomizzazione dei post//
-			int n = elenco.size();
+			/*int n = elenco.size();
 			Vector<Integer> numeri = new Vector<Integer>();
 			Random random = new Random();
 			int caso = random.nextInt(n);
@@ -98,7 +111,7 @@ public class temporizationPosting {
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}*/
 		
 		
 		

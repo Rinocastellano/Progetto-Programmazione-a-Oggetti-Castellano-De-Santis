@@ -21,16 +21,15 @@ public class reading {
 		return str;
 	}
 	
-	public ArrayList<post> readFile(String file) throws IOException {
-		ArrayList<post> post=new ArrayList<post>();
+	public static ArrayList<String> readFile(String file) throws IOException {
+		ArrayList<String> post=new ArrayList<String>();
 		String[] tokens=null;
 		BufferedReader in= new BufferedReader(new FileReader(file));
 		String line;
+		int con=0;
 		while((line=in.readLine())!=null) {
-			tokens=line.split(";");
-		}
-		for(String token : tokens) {
-			post.add(new post(token));
+			
+			post.add(new String(line));
 		}
 		return post;
 	}
