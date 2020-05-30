@@ -20,13 +20,15 @@ public class parsing {
     public static void start(urlReader url) throws Exception {
  
 
-String str = url.read();
+    	List<post> posts = new ArrayList<post>();
+    	List<metadata> metadatas = new ArrayList<metadata>();
+    	
+    	//leggo file dei post ed ottengo una stringa con array di oggetti
+    	String str = url.read();
     			
-    			
+    	//inserimento JSONObj in arraylist posts
     	try {
 			JSONObject obj = new JSONObject(str);
-			List<post>posts=new ArrayList<post>();
-			
 			JSONArray t=obj.getJSONArray("data");
 			for(int i=0; i<t.length();i++){
 				JSONObject res = obj.getJSONArray("data").getJSONObject(i);
@@ -50,6 +52,11 @@ String str = url.read();
 		e.printStackTrace();
 	}
     	
+    	
+    	//inserimento in metadatas
+    	metadatas.add(new metadata("created_time","Time publishing post","String"));
+    	metadatas.add(new metadata("message","content of post","String"));
+    	metadatas.add(new metadata("id","post identificator","String"));
     	
     }
 }
