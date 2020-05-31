@@ -1,4 +1,4 @@
-package univpm.it.CastelDeSa.progettoOOP.model;
+package univpm.it.CastelDeSa.progettoOOP.service;
 
 
 import java.io.IOException;
@@ -17,6 +17,10 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Random;
+
+import univpm.it.CastelDeSa.progettoOOP.model.post;
+import univpm.it.CastelDeSa.progettoOOP.model.reading;
+import univpm.it.CastelDeSa.progettoOOP.model.writing;
 
 public class temporizationPosting {
 	
