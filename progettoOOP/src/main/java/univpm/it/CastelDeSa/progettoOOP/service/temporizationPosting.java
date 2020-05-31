@@ -47,9 +47,10 @@ public class temporizationPosting {
 	 * @throws IOException
 	 */
 	
-	public static ArrayList<post> temporizzatedPosting(String newCreatedTime, ArrayList<post> post) throws IOException {
+	public static ArrayList<post> temporizzatedPosting(post newPost, ArrayList<post> post) throws IOException {
 		
 		//boolean test=isGreaterThanCurrentTime(newCreatedTime); //NECESSITO EXCEPTION
+		String newCreatedTime=newPost.getCreated_time();
 		int cont=0;
 		String lastCreatedTime=post.get(cont).getCreated_time();
 		newCreatedTime=calcoloDatePosting(newCreatedTime, lastCreatedTime);
