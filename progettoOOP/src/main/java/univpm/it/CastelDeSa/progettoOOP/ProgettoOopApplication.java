@@ -9,9 +9,9 @@ import java.util.ArrayList;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import univpm.it.CastelDeSa.progettoOOP.model.parsing;
 import univpm.it.CastelDeSa.progettoOOP.model.post;
 import univpm.it.CastelDeSa.progettoOOP.model.reading;
+import univpm.it.CastelDeSa.progettoOOP.service.parsing;
 
 @SpringBootApplication
 public class ProgettoOopApplication {

@@ -24,7 +24,7 @@ import univpm.it.CastelDeSa.progettoOOP.model.writing;
 
 public class temporizationPosting {
 	
-	public void temporizzatedPosting(int year, int month, int day, int hour, int minute, int second) throws IOException {
+	public ArrayList<post> temporizzatedPosting(int year, int month, int day, int hour, int minute, int second) throws IOException {
 		ArrayList<post> post= new ArrayList<post>(); //lo toglieremo, abbiamo già post
 		
 		String newCreatedTime=year+"-"+month+"-"+day+"T"+hour+":"+minute+":"+second;	
@@ -82,7 +82,7 @@ public class temporizationPosting {
 		post.add(0, new post(newCreatedTime,indexPost,message));
 		
 		
-		System.out.println(post);
+		return post;
 		
 			// randomizzazione dei post//
 			/*int n = elenco.size();

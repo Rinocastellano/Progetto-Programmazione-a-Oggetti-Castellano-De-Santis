@@ -1,4 +1,4 @@
-package univpm.it.CastelDeSa.progettoOOP.model;
+package univpm.it.CastelDeSa.progettoOOP.service;
 
 import java.io.IOException;
 import java.net.URL;
@@ -14,14 +14,31 @@ import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import univpm.it.CastelDeSa.progettoOOP.model.metadata;
+import univpm.it.CastelDeSa.progettoOOP.model.post;
 
+/**
+ * 
+ * Rapresenta la classe che gestisce i record di post e metadata
+ * @author Rino Castellano
+ * @author Matteo De Santis
+ *
+ */
 public class parsing {
 	 
 	static ArrayList<post> posts = new ArrayList<post>();
+	static ArrayList<metadata> metadatas = new ArrayList<metadata>();
 	
+	
+	/**
+	 * Da una stringa formattata in JSON creo un ArrayList di tutti i post pubblicati.
+	 * Inoltre creo l'ArrayList di metadata
+	 * @param Json String estratta precedentemente da una lettura 
+	 * @throws Exception
+	 */
     public static void start(String source) throws Exception {
 
-    	ArrayList<metadata> metadatas = new ArrayList<metadata>();
+    	
     			
     	//inserimento JSONObj in arraylist posts
     	try {
@@ -55,8 +72,19 @@ public class parsing {
     	metadatas.add(new metadata("id","post identificator","String"));
     }
     
-    public ArrayList<post> getPost(){
+    /** 
+     * @return l'array con all'interno tutti i post
+     */
+    public static ArrayList<post> getPost(){
     	return posts;
+    }
+    
+    /**
+     * 
+     * @return l'array con all'interno tutti i metadata
+     */
+    public static ArrayList<metadata> getMetadatas(){
+    	return metadatas;
     }
 }
 
