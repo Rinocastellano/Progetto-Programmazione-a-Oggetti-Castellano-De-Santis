@@ -1,7 +1,10 @@
 package univpm.it.CastelDeSa.progettoOOP.service;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,5 +24,11 @@ public class controller {
 	public ArrayList<metadata> retrieveMetadata(){
 		return parsing.getMetadatas();
 	}
+	
+	@RequestMapping(value="schedule", method=RequestMethod.POST)
+	public ArrayList<post> schedulePost(@RequestBody post post) throws IOException{
+		return temporizationPosting.temporizzatedPosting(post, parsing.posts);
+	}
+	
 
 }

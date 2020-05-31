@@ -22,39 +22,56 @@ import univpm.it.CastelDeSa.progettoOOP.model.post;
 import univpm.it.CastelDeSa.progettoOOP.model.reading;
 import univpm.it.CastelDeSa.progettoOOP.model.writing;
 
+/**
+ * classe utile all'inserimento di post programmati randomici presi da file esterno
+ * @author Castellano Rino
+ * @author Matteo De Santis
+ *
+ */
 public class temporizationPosting {
 	
-	public ArrayList<post> temporizzatedPosting(int year, int month, int day, int hour, int minute, int second) throws IOException {
-		ArrayList<post> post= new ArrayList<post>(); //lo toglieremo, abbiamo già post
+	static SimpleDateFormat formatterFromPosting= new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+	static SimpleDateFormat formatterFromRecord= new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss+SSSS");
+	
+	/**
+	 * Metodo calcolante
+	 * I seguenti parametri corrispondono alla data richiesta dall'utente per la pubblicazione
+	 * @param year
+	 * @param month
+	 * @param day
+	 * @param hour
+	 * @param minute
+	 * @param second
+	 * @param post
+	 * @return ArrayList<post> il solito elenco di post AGGIORNATO
+	 * @throws IOException
+	 */
+	
+	public static ArrayList<post> temporizzatedPosting(String newCreatedTime, ArrayList<post> post) throws IOException {
 		
-		String newCreatedTime=year+"-"+month+"-"+day+"T"+hour+":"+minute+":"+second;	
-		post lastPost=post.get(0);
-		String lastCreatedTime=lastPost.getCreated_time();//lo toglieremo
-		String url=null;
-		Date newPostFormatted=null;
-		Date lastPostFormatted=null;
-		SimpleDateFormat formatterFromPosting= new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
-		SimpleDateFormat formatterFromRecord= new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss+SSSS");
+		//boolean test=isGreaterThanCurrentTime(newCreatedTime); //NECESSITO EXCEPTION
+		int cont=0;
+		String lastCreatedTime=post.get(cont).getCreated_time();
+		newCreatedTime=calcoloDatePosting(newCreatedTime, lastCreatedTime);
+		//ricerca del post che coincide con le nostre richieste di post inerenti al tempo
 		
-		//trasformiamo le stringhe in date per fare i calcoli
-		try {
-			newPostFormatted = formatterFromPosting.parse(newCreatedTime);
-			lastPostFormatted=formatterFromRecord.parse(lastCreatedTime);
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		/*while(onlyDiff(newCreatedTime,lastCreatedTime)) {
+			cont++;
+		}
+		cont--;
+		
+		//ciclo per cercare un buco per il posting
+		while(onlyDiff(newCreatedTime,lastCreatedTime)) {
+		newCreatedTime=calcoloDatePosting(newCreatedTime,lastCreatedTime);
+		cont--;
 		}
 		
-		//condizione per cambiare o meno l'orario di posting
-		if((newPostFormatted.getTime()-lastPostFormatted.getTime())<0) {
-			 Calendar calendar= Calendar.getInstance();
-			 calendar.setTime(lastPostFormatted);
-			 calendar.add(Calendar.HOUR_OF_DAY, 4);
-			 newPostFormatted=calendar.getTime();
-			 newCreatedTime=formatterFromPosting.format(newPostFormatted);
+		//condizione per sistemare nella posizione giusta il post
+		if(newIsGreater(newCreatedTime,lastCreatedTime)) {
+			cont++;
 		}
 
-		
+		*/
 		//lettura da file//
 
 		
@@ -74,73 +91,104 @@ public class temporizationPosting {
 		writing.writingFile("C:\\Users\\vito\\Desktop\\jsonrandom.txt", postRandom);
 		
 		//richiesta posting
-		url="https://graph.facebook.com/107920467600716/feed?access_token=EAAkZCLlHE3QkBAN7MHVJMsdXcCEBqcMruXZBqZA1cqD1lD3C35woAG5JOZBkEMGA7aJcZBfj6ma9pgZBBhYZAzcRUhMYEZCtQJ20eyWUZBx20kVghInDdFnvLM8kZC9xLen6yE1D1Nb2cyG6IZBWsx75ZCCFehTV0HSH2c2GYDFSqTcmJ5CSw1pFY30yBdABdlOQa4rgmx93QkQSMwZDZD&message="+message+"&scheduled_publish_time="+newCreatedTime;
+		URL url=new URL("https://graph.facebook.com/107920467600716/feed?access_token=EAAkZCLlHE3QkBAN7MHVJMsdXcCEBqcMruXZBqZA1cqD1lD3C35woAG5JOZBkEMGA7aJcZBfj6ma9pgZBBhYZAzcRUhMYEZCtQJ20eyWUZBx20kVghInDdFnvLM8kZC9xLen6yE1D1Nb2cyG6IZBWsx75ZCCFehTV0HSH2c2GYDFSqTcmJ5CSw1pFY30yBdABdlOQa4rgmx93QkQSMwZDZD&message="+message+"&scheduled_publish_time="+newCreatedTime);
+		HttpURLConnection con = (HttpURLConnection) url.openConnection();
+		con.setRequestMethod("POST");
+		System.out.println(con.getResponseMessage());
+		
 		//...da finire, problemi con connessione per posting, otterrò anche un id
 		String indexPost="";
 		
 		//qualora la richiesta fosse accettata -> inserimento post in arraylist post
-		post.add(0, new post(newCreatedTime,indexPost,message));
+		post.add(cont, new post(newCreatedTime,indexPost,message));
 		
 		
 		return post;
+		}
 		
-			// randomizzazione dei post//
-			/*int n = elenco.size();
-			Vector<Integer> numeri = new Vector<Integer>();
-			Random random = new Random();
-			int caso = random.nextInt(n);
-
-			for (int l = 0; l < elenco.size(); l++) {
-
-				do {
-
-					caso = random.nextInt(n);
-
-				} while (numeri.contains(caso));
-
-				numeri.add(caso);
-
-				System.out.println(caso);
-
-				String message = elenco.get(caso);
-
-				URL url = new URL(
-						"https://graph.facebook.com/107920467600716/feed?access_token=EAAkZCLlHE3QkBAN7MHVJMsdXcCEBqcMruXZBqZA1cqD1lD3C35woAG5JOZBkEMGA7aJcZBfj6ma9pgZBBhYZAzcRUhMYEZCtQJ20eyWUZBx20kVghInDdFnvLM8kZC9xLen6yE1D1Nb2cyG6IZBWsx75ZCCFehTV0HSH2c2GYDFSqTcmJ5CSw1pFY30yBdABdlOQa4rgmx93QkQSMwZDZD&message="
-								+ message + "&scheduled_publish_time=" + newPost);
-				HttpURLConnection con = (HttpURLConnection) url.openConnection();
-				con.setRequestMethod("POST");
-
-			}
-
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}*/
+	
+	
+	//calcola, se c'è necessità di cambiare orario per il posting, il nuovo orario per il post
+	
+	public static String calcoloDatePosting(String newCreatedTime, String lastCreatedTime) {
+		Date newPostFormatted=null;
+		Date lastPostFormatted=null;
 		
-		
-		
-		
-		
-		/*
-		URL u=null;
-		HttpURLConnection con=null;
-		String data=null;
 		try {
-			u = new URL(url);
-			con = (HttpURLConnection) u.openConnection();
-			//con.connect();
-			con.setRequestMethod("POST");
-		} catch (IOException e) {
+			newPostFormatted = formatterFromPosting.parse(newCreatedTime);
+			lastPostFormatted= formatterFromRecord.parse(lastCreatedTime);
+		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
-		String i= ((HttpURLConnection) con).getResponseMessage();
-		System.out.println(newPost+"\n"+i);
-			*/
-			
+		if((newPostFormatted.getTime()-lastPostFormatted.getTime())<14400000 &&(newPostFormatted.getTime()-lastPostFormatted.getTime())>-14400000) {
+		Calendar calendar= Calendar.getInstance();
+		 calendar.setTime(lastPostFormatted);
+		 calendar.add(Calendar.HOUR_OF_DAY, 4);
+		 newPostFormatted=calendar.getTime();
 		}
 		
+		return formatterFromPosting.format(newPostFormatted);
+	}
+	
+	/*
+	//calcola se la data scelta da noi è distante 4 ore da quella di nostro interesse
+	
+	public static boolean onlyDiff(String newTime, String lastTime) {
+		Date newPostFormatted=null;
+		Date lastPostFormatted=null;
 		
+		
+		try {
+			newPostFormatted = formatterFromPosting.parse(newTime);
+			lastPostFormatted=formatterFromRecord.parse(lastTime);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		if((newPostFormatted.getTime()-lastPostFormatted.getTime())<14400000 &(newPostFormatted.getTime()-lastPostFormatted.getTime())>-14400000) {
+		return true;}
+		else return false;
+	}
+	
+	
+	//controlla se la data scelta da noi è più grande di quella analizzata
+	
+	public static boolean newIsGreater(String newTime, String lastTime) {
+		Date newPostFormatted=null;
+		Date lastPostFormatted=null;
+		
+		
+		try {
+			newPostFormatted = formatterFromPosting.parse(newTime);
+			lastPostFormatted=formatterFromRecord.parse(lastTime);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		if((newPostFormatted.getTime()-lastPostFormatted.getTime())>0) {
+		return true;}
+		else return false;
+	}
+	
+	//calcola se è una data accettabile per il posting, ovvero non dobbiamo postare indietro nel tempo
+	
+	public static boolean isGreaterThanCurrentTime(String newTime) {
+		Date newPostFormatted=null;
+		
+		try {
+			newPostFormatted = formatterFromPosting.parse(newTime);
+			
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		if(newPostFormatted.getTime()-System.currentTimeMillis()<0) {
+		return true;}
+		else return false ;
+		
+	}
+	*/
 	}
 

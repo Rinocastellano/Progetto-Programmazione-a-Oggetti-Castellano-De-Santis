@@ -26,7 +26,6 @@ public class reading {
 		String[] tokens=null;
 		BufferedReader in= new BufferedReader(new FileReader(file));
 		String line;
-		int con=0;
 		while((line=in.readLine())!=null) {
 			
 			post.add(new String(line));
