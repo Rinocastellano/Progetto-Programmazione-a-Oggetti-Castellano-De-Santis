@@ -50,7 +50,6 @@ public class postStorage {
 				mapper.findAndRegisterModules();
 				posts.add(mapper.readValue(res.toString(),post.class));
 			}
-			System.out.println(posts);
     } catch (JSONException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();

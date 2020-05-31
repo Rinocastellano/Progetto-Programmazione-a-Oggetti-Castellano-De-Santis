@@ -1,4 +1,4 @@
-package univpm.it.CastelDeSa.progettoOOP.model;
+package univpm.it.CastelDeSa.progettoOOP.service;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

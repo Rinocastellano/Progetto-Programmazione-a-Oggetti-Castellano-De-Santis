@@ -1,4 +1,4 @@
-package univpm.it.CastelDeSa.progettoOOP.model;
+package univpm.it.CastelDeSa.progettoOOP.service;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -23,11 +23,9 @@ public class reading {
 	
 	public static ArrayList<String> readFile(String file) throws IOException {
 		ArrayList<String> post=new ArrayList<String>();
-		String[] tokens=null;
 		BufferedReader in= new BufferedReader(new FileReader(file));
 		String line;
 		while((line=in.readLine())!=null) {
-			
 			post.add(new String(line));
 		}
 		return post;

@@ -19,8 +19,6 @@ import java.util.Date;
 import java.util.Random;
 
 import univpm.it.CastelDeSa.progettoOOP.model.post;
-import univpm.it.CastelDeSa.progettoOOP.model.reading;
-import univpm.it.CastelDeSa.progettoOOP.model.writing;
 
 /**
  * classe utile all'inserimento di post programmati randomici presi da file esterno
