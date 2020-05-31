@@ -17,10 +17,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class parsing {
 	 
-    public static ArrayList<post> start(String source) throws Exception {
- 
+	static ArrayList<post> posts = new ArrayList<post>();
+	
+    public static void start(String source) throws Exception {
 
-    	ArrayList<post> posts = new ArrayList<post>();
     	ArrayList<metadata> metadatas = new ArrayList<metadata>();
     			
     	//inserimento JSONObj in arraylist posts
@@ -53,7 +53,9 @@ public class parsing {
     	metadatas.add(new metadata("created_time","Time publishing post","String"));
     	metadatas.add(new metadata("message","content of post","String"));
     	metadatas.add(new metadata("id","post identificator","String"));
-    	
+    }
+    
+    public ArrayList<post> getPost(){
     	return posts;
     }
 }
