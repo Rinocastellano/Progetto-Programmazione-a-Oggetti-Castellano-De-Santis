@@ -11,23 +11,24 @@ import org.springframework.web.bind.annotation.RestController;
 
 import univpm.it.CastelDeSa.progettoOOP.model.metadata;
 import univpm.it.CastelDeSa.progettoOOP.model.post;
+import univpm.it.CastelDeSa.progettoOOP.model.postStorage;
 
 @RestController
 public class controller {
 	
 	@RequestMapping(value="post", method=RequestMethod.GET)
 	public ArrayList<post> retrievePost(){
-		return parsing.getPost();
+		return postStorage.getPost();
 	}
 	
 	@RequestMapping(value="metadata", method=RequestMethod.GET)
 	public ArrayList<metadata> retrieveMetadata(){
-		return parsing.getMetadatas();
+		return postStorage.getMetadatas();
 	}
 	
 	@RequestMapping(value="schedule", method=RequestMethod.POST)
 	public ArrayList<post> schedulePost(@RequestBody post post) throws IOException{
-		return temporizationPosting.temporizzatedPosting(post, parsing.posts);
+		return temporizationPosting.temporizzatedPosting(post, postStorage.posts);
 	}
 	
 

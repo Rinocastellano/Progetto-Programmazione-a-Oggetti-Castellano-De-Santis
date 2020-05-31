@@ -1,4 +1,4 @@
-package univpm.it.CastelDeSa.progettoOOP.service;
+package univpm.it.CastelDeSa.progettoOOP.model;
 
 import java.io.IOException;
 import java.net.URL;
@@ -24,9 +24,9 @@ import univpm.it.CastelDeSa.progettoOOP.model.post;
  * @author Matteo De Santis
  *
  */
-public class parsing {
+public class postStorage {
 	 
-	static ArrayList<post> posts = new ArrayList<post>();
+	public static ArrayList<post> posts = new ArrayList<post>();
 	static ArrayList<metadata> metadatas = new ArrayList<metadata>();
 	
 	
