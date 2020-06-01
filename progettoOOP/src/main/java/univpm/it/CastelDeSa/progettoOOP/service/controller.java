@@ -1,8 +1,10 @@
 package univpm.it.CastelDeSa.progettoOOP.service;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 
+import org.apache.hc.core5.http.ParseException;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,7 +29,7 @@ public class controller {
 	}
 	
 	@RequestMapping(value="schedule", method=RequestMethod.POST)
-	public ArrayList<post> schedulePost(@RequestBody post post) throws IOException{
+	public String schedulePost(@RequestBody post post) throws IOException, ParseException, URISyntaxException{
 		return temporizationPosting.temporizzatedPosting(post, postStorage.posts);
 	}
 	
