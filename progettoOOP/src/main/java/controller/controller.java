@@ -1,4 +1,4 @@
-package univpm.it.CastelDeSa.progettoOOP.service;
+package controller;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 import univpm.it.CastelDeSa.progettoOOP.model.metadata;
 import univpm.it.CastelDeSa.progettoOOP.model.post;
 import univpm.it.CastelDeSa.progettoOOP.model.statNum;
+import univpm.it.CastelDeSa.progettoOOP.service.postStorage;
+import univpm.it.CastelDeSa.progettoOOP.service.temporizationPosting;
 import univpm.it.CastelDeSa.progettoOOP.stat.statAvg;
 import univpm.it.CastelDeSa.progettoOOP.stat.statMax;
 

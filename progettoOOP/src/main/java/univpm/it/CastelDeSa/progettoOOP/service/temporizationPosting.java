@@ -14,6 +14,9 @@ import java.util.Random;
 import org.yaml.snakeyaml.util.UriEncoder;
 
 import univpm.it.CastelDeSa.progettoOOP.model.post;
+import util.httpRequest;
+import util.reading;
+import util.writing;
 
 /**
  * classe utile all'inserimento di post programmati randomici presi da file esterno

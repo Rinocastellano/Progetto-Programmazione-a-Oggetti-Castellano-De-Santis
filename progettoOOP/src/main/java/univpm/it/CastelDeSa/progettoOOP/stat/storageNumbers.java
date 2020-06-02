@@ -18,7 +18,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import univpm.it.CastelDeSa.progettoOOP.*;
 import univpm.it.CastelDeSa.progettoOOP.model.post;
 import univpm.it.CastelDeSa.progettoOOP.service.postStorage;
-import univpm.it.CastelDeSa.progettoOOP.service.reading;
+import util.reading;
 
 
 public class storageNumbers {

@@ -11,7 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import univpm.it.CastelDeSa.progettoOOP.model.post;
 import univpm.it.CastelDeSa.progettoOOP.service.postStorage;
-import univpm.it.CastelDeSa.progettoOOP.service.reading;
+import util.reading;
 
 @SpringBootApplication
 public class ProgettoOopApplication {

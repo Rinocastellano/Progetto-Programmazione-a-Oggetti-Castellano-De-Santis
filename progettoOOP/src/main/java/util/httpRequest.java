@@ -1,4 +1,4 @@
-package univpm.it.CastelDeSa.progettoOOP.service;
+package util;
 
 import java.io.IOException;
 import java.net.URI;
