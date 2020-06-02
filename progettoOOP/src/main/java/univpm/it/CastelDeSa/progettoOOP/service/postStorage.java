@@ -1,4 +1,4 @@
-package univpm.it.CastelDeSa.progettoOOP.model;
+package univpm.it.CastelDeSa.progettoOOP.service;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -12,6 +12,9 @@ import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import univpm.it.CastelDeSa.progettoOOP.model.metadata;
+import univpm.it.CastelDeSa.progettoOOP.model.post;
+
 
 /**
  * 
@@ -20,7 +23,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  * @author Matteo De Santis
  *
  */
-public class postStorage {
+public abstract class postStorage {
 	 
 	public static  ArrayList<post> posts = new ArrayList<post>();
 	static ArrayList<metadata> metadatas = new ArrayList<metadata>();
@@ -32,7 +35,9 @@ public class postStorage {
 	 * @param Json String estratta precedentemente da una lettura 
 	 * @throws Exception
 	 */
-    public static  void start(String source) throws Exception {
+    public static void start(String source) throws Exception {
+    	
+    	source=reading.readUrl(source);
 
     	
     			
@@ -81,5 +86,7 @@ public class postStorage {
     public static  ArrayList<metadata> getMetadatas(){
     	return metadatas;
     }
+    
+    public abstract ArrayList<String> GetNumbers();
 }
 

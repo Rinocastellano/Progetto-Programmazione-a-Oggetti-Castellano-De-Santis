@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import univpm.it.CastelDeSa.progettoOOP.model.metadata;
 import univpm.it.CastelDeSa.progettoOOP.model.post;
-import univpm.it.CastelDeSa.progettoOOP.model.postStorage;
 
 @RestController
 public class controller {
