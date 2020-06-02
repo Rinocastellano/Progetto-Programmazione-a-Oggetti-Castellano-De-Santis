@@ -6,12 +6,18 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 import univpm.it.CastelDeSa.progettoOOP.model.post;
+import univpm.it.CastelDeSa.progettoOOP.model.stat;
 import univpm.it.CastelDeSa.progettoOOP.model.statNum;
 
-public class statMax {
+public class statMax implements statCalcNum{
 	//definisco l'arrayList da analizzare per la statistica
+	private ArrayList<post> post=new ArrayList<post>();
 	
-	public static statNum doStat(ArrayList<post> post) {
+	public statMax(ArrayList<post> post) {
+		this.post=post;
+	}
+	
+	public  statNum doStat() {
 		//un'alternativa è con le HashMap, ma per ora rimane in cantiere
 		/*ArrayList<String> posts=storageNumbers.GetNumbers(post);
 		Map<Integer, Integer> counts = new HashMap<Integer,Integer>();

@@ -3,11 +3,17 @@ package univpm.it.CastelDeSa.progettoOOP.stat;
 import java.util.ArrayList;
 
 import univpm.it.CastelDeSa.progettoOOP.model.post;
+import univpm.it.CastelDeSa.progettoOOP.model.stat;
 import univpm.it.CastelDeSa.progettoOOP.model.statNum;
 
-public class statAvg {
+public class statAvg implements statCalcNum{
+	private ArrayList<post> post=new ArrayList<post>();
 	
-	public static statNum doStat(ArrayList<post> post) {
+	public statAvg(ArrayList<post> post) {
+		this.post=post;
+	}
+	
+	public  statNum doStat() {
 		int somma=0;
 		int n=0;
 		for(int i=0;i<post.size();i++) {

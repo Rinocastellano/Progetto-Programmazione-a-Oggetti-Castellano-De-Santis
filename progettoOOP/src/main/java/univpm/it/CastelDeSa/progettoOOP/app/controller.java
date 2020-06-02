@@ -1,4 +1,4 @@
-package controller;
+package univpm.it.CastelDeSa.progettoOOP.app;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -13,10 +13,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 import univpm.it.CastelDeSa.progettoOOP.model.metadata;
 import univpm.it.CastelDeSa.progettoOOP.model.post;
+import univpm.it.CastelDeSa.progettoOOP.model.stat;
 import univpm.it.CastelDeSa.progettoOOP.model.statNum;
 import univpm.it.CastelDeSa.progettoOOP.service.postStorage;
+import univpm.it.CastelDeSa.progettoOOP.service.statService;
 import univpm.it.CastelDeSa.progettoOOP.service.temporizationPosting;
 import univpm.it.CastelDeSa.progettoOOP.stat.statAvg;
+import univpm.it.CastelDeSa.progettoOOP.stat.statCalcNum;
 import univpm.it.CastelDeSa.progettoOOP.stat.statMax;
 
 @RestController
@@ -38,8 +41,9 @@ public class controller {
 	}
 	
 	@RequestMapping(value="statNum", method=RequestMethod.POST)
-	public statNum statNumPost() {
-		return statAvg.doStat(postStorage.posts);
+	public stat statNumPost(@RequestBody String command) {
+		statCalcNum newStat= statService.statFormulation(command, postStorage.posts);
+		return newStat.doStat();
 	}
 	
 
