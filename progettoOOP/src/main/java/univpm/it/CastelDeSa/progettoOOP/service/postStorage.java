@@ -37,33 +37,7 @@ public abstract class postStorage {
 	 */
     public static void start(String source) throws Exception {
     	
-    	source=reading.readUrl(source);
-
-    	
-    			
-    	//inserimento JSONObj in arraylist posts
-    	try {
-			JSONObject obj = new JSONObject(source);
-			JSONArray t=obj.getJSONArray("data");
-			for(int i=0; i<t.length();i++){
-				JSONObject res = obj.getJSONArray("data").getJSONObject(i);
-				ObjectMapper mapper= new ObjectMapper();
-				mapper.findAndRegisterModules();
-				posts.add(mapper.readValue(res.toString(),post.class));
-			}
-    } catch (JSONException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	} catch (JsonParseException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	} catch (JsonMappingException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	} catch (IOException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
+    	posts=parsing.run(source);
     	
     	
     	//inserimento in metadatas

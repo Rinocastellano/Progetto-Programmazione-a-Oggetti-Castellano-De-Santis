@@ -5,6 +5,9 @@ public class statNum extends stat {
 	private int min;
 	private int max;
 	
+	public statNum() {
+		super();
+	}
 	
 	public statNum(String spec,int avg, int min, int max) {
 		super(spec);

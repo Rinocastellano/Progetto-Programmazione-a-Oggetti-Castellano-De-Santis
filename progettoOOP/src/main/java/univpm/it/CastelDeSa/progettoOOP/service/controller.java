@@ -13,6 +13,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import univpm.it.CastelDeSa.progettoOOP.model.metadata;
 import univpm.it.CastelDeSa.progettoOOP.model.post;
+import univpm.it.CastelDeSa.progettoOOP.model.statNum;
+import univpm.it.CastelDeSa.progettoOOP.stat.statAvg;
+import univpm.it.CastelDeSa.progettoOOP.stat.statMax;
 
 @RestController
 public class controller {
@@ -30,6 +33,11 @@ public class controller {
 	@RequestMapping(value="schedule", method=RequestMethod.POST)
 	public String schedulePost(@RequestBody post post) throws IOException, ParseException, URISyntaxException{
 		return temporizationPosting.temporizzatedPosting(post, postStorage.posts);
+	}
+	
+	@RequestMapping(value="statNum", method=RequestMethod.POST)
+	public statNum statNumPost() {
+		return statAvg.doStat(postStorage.posts);
 	}
 	
 

@@ -8,7 +8,8 @@ import univpm.it.CastelDeSa.progettoOOP.stat.storageNumbers;
 public class stat {
 	
 	String spec;
-	
+	public stat() {
+	}
 	public stat(String s) {
 		this.spec=s;
 	}
@@ -36,13 +37,7 @@ public class stat {
 		 int min=0;
 		 int max=0;
 		 int photo_video=0;
-		 for(int i=0;i<caratteri.size();i++) {        //non levo i post con zero message perchè fanno parte della mia statistica//
-			 str=caratteri.get(i);
-			somma+=str;                                //la somma di tutte le stringhe(message)//
-			n++;
 
-		 }
-		 media=somma.length()/n;
 
 		 System.out.println(somma);
 
@@ -59,12 +54,6 @@ public class stat {
 					photo_video++;
 		          }	
 		     }	
-
-
-		 for(int i=0;i<numero_char.size();i++){
-		 if(numero_char.get(i)>max) {
-			 max=numero_char.get(i); 
-		 }
 
 		 if(numero_char.get(i)<=min) {
 			 min=numero_char.get(i);
