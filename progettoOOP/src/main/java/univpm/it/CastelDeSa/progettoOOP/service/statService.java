@@ -4,6 +4,7 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 
+import univpm.it.CastelDeSa.progettoOOP.exceptions.commandStatException;
 import univpm.it.CastelDeSa.progettoOOP.model.post;
 import univpm.it.CastelDeSa.progettoOOP.model.statNum;
 import univpm.it.CastelDeSa.progettoOOP.stat.statCalc;
@@ -22,12 +23,14 @@ public class statService {
 	 * @param command, specifica per la statistica utile alla creazione della classe
 	 * @param post, arrayList di post da analizzare
 	 * @return
+	 * @throws commandStatException 
 	 */
-	public static statCalc statFormulation(String command, ArrayList<post> post) {
+	public static statCalc statFormulation(String command, ArrayList<post> post) throws commandStatException {
 		
 		statCalc newStat = null;
 		try {
 			Class <?> c = Class.forName(dir+command.substring(0, 1).toUpperCase()+command.substring(1));
+			
 			Constructor<?> con = c.getDeclaredConstructor(ArrayList.class);
 			newStat= (statCalc) con.newInstance(post);
 		} catch (NoSuchMethodException e) {
@@ -38,7 +41,8 @@ public class statService {
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
 		// TODO Auto-generated catch block
-		e.printStackTrace();
+		//e.printStackTrace();
+		throw new commandStatException(e);
 		} catch (InstantiationException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

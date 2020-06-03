@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import univpm.it.CastelDeSa.progettoOOP.exceptions.commandStatException;
 import univpm.it.CastelDeSa.progettoOOP.model.metadata;
 import univpm.it.CastelDeSa.progettoOOP.model.post;
 import univpm.it.CastelDeSa.progettoOOP.model.stat;
@@ -41,7 +42,7 @@ public class controller {
 	}
 	
 	@RequestMapping(value="statNum", method=RequestMethod.POST)
-	public stat statNumPost(@RequestBody String command) {
+	public stat statNumPost(@RequestBody String command) throws commandStatException {
 		statCalc newStat= statService.statFormulation(command, postStorage.posts);
 		return newStat.doStat();
 	}

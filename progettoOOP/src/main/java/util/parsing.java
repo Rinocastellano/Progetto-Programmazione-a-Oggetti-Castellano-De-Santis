@@ -20,7 +20,7 @@ import univpm.it.CastelDeSa.progettoOOP.model.post;
 
 public class parsing {
 
-	public static ArrayList<post> run(String url) throws MalformedURLException, JsonMappingException, JsonProcessingException  {
+	public static ArrayList<post> run(String url) throws MalformedURLException, JsonMappingException, JsonProcessingException, JSONException  {
 		ArrayList<post>postatore=new ArrayList<post>();			
 		String str = null;
 		try {
