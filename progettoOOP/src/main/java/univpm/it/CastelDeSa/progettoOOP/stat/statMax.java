@@ -1,6 +1,7 @@
 package univpm.it.CastelDeSa.progettoOOP.stat;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -9,7 +10,13 @@ import univpm.it.CastelDeSa.progettoOOP.model.post;
 import univpm.it.CastelDeSa.progettoOOP.model.stat;
 import univpm.it.CastelDeSa.progettoOOP.model.statNum;
 
-public class statMax implements statCalcNum{
+/**
+ * classe per il calcolo del post con max numero di caratteri, dato un ArrayList di post
+ * 
+ * @author Castellano Rino
+ *
+ */
+public class statMax implements statCalc{
 	//definisco l'arrayList da analizzare per la statistica
 	private ArrayList<post> post=new ArrayList<post>();
 	
@@ -17,41 +24,25 @@ public class statMax implements statCalcNum{
 		this.post=post;
 	}
 	
+	/**
+	 * metodo di calcolo statistica, implementato dal più generico statCalcNum
+	 */
+	@Override
 	public  statNum doStat() {
-		//un'alternativa è con le HashMap, ma per ora rimane in cantiere
-		/*ArrayList<String> posts=storageNumbers.GetNumbers(post);
-		Map<Integer, Integer> counts = new HashMap<Integer,Integer>();
-		statNum stat= new statNum();
-		for(int i=0;i<posts.size();i++) {
-			for(Integer key : counts.keySet()) {
-				System.out.print(key);
-			if(posts.get(i).length()>counts.)) {
-				counts.clear();
-				counts.put(posts.get(i).length(),1);
-			}}
-			if(counts.equals(posts.get(i).length())) {
-				counts.put(posts.get(i).length(), counts.get(posts.get(i).length())+1);
-				
+	
+		int max;
+		Map<String,Integer> map= new HashMap<String,Integer>();
+		for(post record : post) {
+			if(record.getMessage()!=null) {
+				map.put(record.getMessage(), record.getMessage().length());
 			}
-		}*/
-		
-		int max=0;
-		int count=0;
-		int i=0;
-		for(i=0;i<post.size();i++){
-			if(post.get(i).getMessage()!=null && post.get(i).getMessage().length()>max) {
-				 max=post.get(i).getMessage().length();
-				 count=0;
-			 }
-			 if(post.get(i).getMessage()!=null && post.get(i).getMessage().length()==max) {
-				 count++;
-			 }
-			
-		
 		}
+		max=Collections.max(map.values());
 		statNum stat= new statNum();
-		stat.setMax(max);
+		stat.setMin(max);
 		return stat;
+		
+		
 }
 	
 }

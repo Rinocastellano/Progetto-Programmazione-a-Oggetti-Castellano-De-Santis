@@ -6,19 +6,30 @@ import java.util.ArrayList;
 
 import univpm.it.CastelDeSa.progettoOOP.model.post;
 import univpm.it.CastelDeSa.progettoOOP.model.statNum;
-import univpm.it.CastelDeSa.progettoOOP.stat.statCalcNum;
+import univpm.it.CastelDeSa.progettoOOP.stat.statCalc;
 
+/**
+ * classe per il servizio statistica, utile alla creazione istantanea di una classe statX (X=max,avg,min,ecc.)
+ * 
+ * @author Castellano Rino
+ *
+ */
 public class statService {
 	
 	private static String dir="univpm.it.CastelDeSa.progettoOOP.stat.stat";
-	
-	public static statCalcNum statFormulation(String command, ArrayList<post> post) {
+	/**
+	 * Metodo calcolante la classe statistica utile per il service Stat
+	 * @param command, specifica per la statistica utile alla creazione della classe
+	 * @param post, arrayList di post da analizzare
+	 * @return
+	 */
+	public static statCalc statFormulation(String command, ArrayList<post> post) {
 		
-		statCalcNum newStat = null;
+		statCalc newStat = null;
 		try {
 			Class <?> c = Class.forName(dir+command.substring(0, 1).toUpperCase()+command.substring(1));
 			Constructor<?> con = c.getDeclaredConstructor(ArrayList.class);
-			newStat= (statCalcNum) con.newInstance(post);
+			newStat= (statCalc) con.newInstance(post);
 		} catch (NoSuchMethodException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

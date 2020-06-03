@@ -6,7 +6,12 @@ import univpm.it.CastelDeSa.progettoOOP.model.post;
 import univpm.it.CastelDeSa.progettoOOP.model.stat;
 import univpm.it.CastelDeSa.progettoOOP.model.statNum;
 
-public interface statCalcNum {
+/**
+ * interfaccia utile al calcolo di statistiche
+ * @author Castellano Rino
+ *
+ */
+public interface statCalc {
 	
 	public stat doStat();
 }
