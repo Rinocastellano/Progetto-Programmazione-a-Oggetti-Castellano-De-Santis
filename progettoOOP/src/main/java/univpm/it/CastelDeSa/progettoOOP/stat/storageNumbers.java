@@ -17,25 +17,15 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import univpm.it.CastelDeSa.progettoOOP.*;
 import univpm.it.CastelDeSa.progettoOOP.model.post;
-import univpm.it.CastelDeSa.progettoOOP.service.parsing;
-import univpm.it.CastelDeSa.progettoOOP.service.reading;
+import univpm.it.CastelDeSa.progettoOOP.service.postStorage;
+import util.reading;
 
 
-public class storageNumbers extends parsing {
-
-	
-	
-	
-	public storageNumbers(String url) throws MalformedURLException {
-		super(url);
-		// TODO Auto-generated constructor stub
-	}
-
-	public ArrayList<post> getter=storageNumbers.Getposts();
-			
+public class storageNumbers {
 
 
-   public ArrayList<String>Getnumbers(){
+	//mi ritorna un arrayList con i soli messaggi da analizzare
+   public static ArrayList<String> GetNumbers(ArrayList<post> getter){
 	   ArrayList<String>caratteri=new ArrayList<String>();
 	   String str;
 	   post p;
@@ -43,21 +33,12 @@ public class storageNumbers extends parsing {
 		 p=getter.get(i);
 		 str=p.getMessage();
 		 caratteri.add(str);
-		  
+
 	  }
 	  return caratteri;
-	   
+
    }
-	   
-	   
-	   
+
+
+
    }
-	
-	
-	
-
-	
-	
-
-
-
