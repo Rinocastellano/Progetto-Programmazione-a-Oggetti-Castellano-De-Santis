@@ -5,6 +5,10 @@ import java.util.ArrayList;
 
 import univpm.it.CastelDeSa.progettoOOP.stat.storageNumbers;
 
+/**
+ * classe statistica generica, contiene solo la specifica
+ * @param spec, specifica
+ */
 public class stat {
 	
 	String spec;
@@ -55,17 +59,8 @@ public class stat {
 		          }	
 		     }	
 
-		 if(numero_char.get(i)<=min) {
-			 min=numero_char.get(i);
-
-
-		 }
 
 	    }
-
-		 System.out.println(min);
-		 System.out.println(max);
-		 System.out.println(photo_video);
-		 System.out.println(media);*/
+		 System.out.println(photo_video);*/
 
 }	 

@@ -19,7 +19,7 @@ import univpm.it.CastelDeSa.progettoOOP.service.postStorage;
 import univpm.it.CastelDeSa.progettoOOP.service.statService;
 import univpm.it.CastelDeSa.progettoOOP.service.temporizationPosting;
 import univpm.it.CastelDeSa.progettoOOP.stat.statAvg;
-import univpm.it.CastelDeSa.progettoOOP.stat.statCalcNum;
+import univpm.it.CastelDeSa.progettoOOP.stat.statCalc;
 import univpm.it.CastelDeSa.progettoOOP.stat.statMax;
 
 @RestController
@@ -42,7 +42,7 @@ public class controller {
 	
 	@RequestMapping(value="statNum", method=RequestMethod.POST)
 	public stat statNumPost(@RequestBody String command) {
-		statCalcNum newStat= statService.statFormulation(command, postStorage.posts);
+		statCalc newStat= statService.statFormulation(command, postStorage.posts);
 		return newStat.doStat();
 	}
 	

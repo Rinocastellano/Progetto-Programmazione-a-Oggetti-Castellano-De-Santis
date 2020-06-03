@@ -6,13 +6,22 @@ import univpm.it.CastelDeSa.progettoOOP.model.post;
 import univpm.it.CastelDeSa.progettoOOP.model.stat;
 import univpm.it.CastelDeSa.progettoOOP.model.statNum;
 
-public class statAvg implements statCalcNum{
+/**
+ * classe utile al calcolo della lunghezza media dei post
+ * @author Castellano Rino
+ *
+ */
+public class statAvg implements statCalc{
+	
+	
 	private ArrayList<post> post=new ArrayList<post>();
 	
 	public statAvg(ArrayList<post> post) {
 		this.post=post;
 	}
-	
+	/**
+	 * override del metodo dell'interfaccia statCalcNum dostat()
+	 */
 	public  statNum doStat() {
 		int somma=0;
 		int n=0;

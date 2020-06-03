@@ -9,7 +9,13 @@ import univpm.it.CastelDeSa.progettoOOP.model.post;
 import univpm.it.CastelDeSa.progettoOOP.model.stat;
 import univpm.it.CastelDeSa.progettoOOP.model.statNum;
 
-public class statMin implements statCalcNum {
+/**
+ * classe per il calcolo del post con minor numero di caratteri(esclusi i post con foto/video, considerati di default SENZA char
+ * dato un arrayList di post da analizzare, calcolo statistica
+ * @author Castellano Rino
+ *
+ */
+public class statMin implements statCalc{
 
 private ArrayList<post> post=new ArrayList<post>();
 	
@@ -17,9 +23,12 @@ private ArrayList<post> post=new ArrayList<post>();
 		this.post=post;
 	}
 	
+	/**
+	 * override del metodo doStat() di statCalcNum
+	 */
 	@Override
 	public statNum doStat() {
-		int min=0;
+		int min;
 		Map<String,Integer> map= new HashMap<String,Integer>();
 		for(post record : post) {
 			if(record.getMessage()!=null) {
