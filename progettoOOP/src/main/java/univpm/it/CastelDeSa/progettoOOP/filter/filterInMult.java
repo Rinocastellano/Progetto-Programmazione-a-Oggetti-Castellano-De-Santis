@@ -4,9 +4,13 @@ import java.util.ArrayList;
 
 import univpm.it.CastelDeSa.progettoOOP.model.post;
 
-public class filterInMult {
+public class filterInMult extends filterIn implements filter{
+	
+	public filterInMult(ArrayList<post> post, String spec) {
+		super(post,spec);
+	}
 
-	public static  ArrayList<post> doFilter(ArrayList<post> post) {
+	public  ArrayList<post> doFilter() {
 		ArrayList<post> postFiltered =new ArrayList<post>();
 		for(post p : post) {
 			if(p.getMessage()==null) 

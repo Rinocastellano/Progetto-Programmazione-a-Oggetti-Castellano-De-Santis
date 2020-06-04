@@ -16,7 +16,7 @@ import univpm.it.CastelDeSa.progettoOOP.model.statNum;
  * @author Castellano Rino
  *
  */
-public class statMax implements statCalc{
+public class statMax implements statCalculate {
 	//definisco l'arrayList da analizzare per la statistica
 	private ArrayList<post> post=new ArrayList<post>();
 	

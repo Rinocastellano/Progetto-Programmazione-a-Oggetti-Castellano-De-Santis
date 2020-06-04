@@ -11,7 +11,7 @@ import univpm.it.CastelDeSa.progettoOOP.model.statNum;
  * @author Castellano Rino
  *
  */
-public class statAvg implements statCalc{
+public class statAvg implements statCalculate{
 	
 	
 	private ArrayList<post> post=new ArrayList<post>();

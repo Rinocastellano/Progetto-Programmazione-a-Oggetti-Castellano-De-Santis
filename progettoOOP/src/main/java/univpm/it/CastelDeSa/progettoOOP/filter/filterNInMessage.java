@@ -5,9 +5,14 @@ import java.util.Iterator;
 
 import univpm.it.CastelDeSa.progettoOOP.model.post;
 
-public class filterNInMessage {
+public class filterNInMessage implements filter {
+	private ArrayList<post> post= new ArrayList<post>();
 	
-	public static ArrayList<post> doFilter(ArrayList<post> post){
+	public filterNInMessage(ArrayList<post> post) {
+		this.post=post;
+	}
+	
+	public  ArrayList<post> doFilter(){
 		ArrayList<post> postFiltered =new ArrayList<post>();
 		postFiltered=post;
 		for(Iterator<post> it= postFiltered.iterator();it.hasNext();) {

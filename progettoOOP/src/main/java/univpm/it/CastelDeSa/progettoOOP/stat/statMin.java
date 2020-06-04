@@ -15,7 +15,7 @@ import univpm.it.CastelDeSa.progettoOOP.model.statNum;
  * @author Castellano Rino
  *
  */
-public class statMin implements statCalc{
+public class statMin implements statCalculate{
 
 private ArrayList<post> post=new ArrayList<post>();
 	

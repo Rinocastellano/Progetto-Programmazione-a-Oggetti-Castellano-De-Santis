@@ -15,7 +15,7 @@ import univpm.it.CastelDeSa.progettoOOP.model.statPres;
  * @author Castellano Rino
  *
  */
-public class statPresMult implements statCalc{
+public class statPresMult implements statCalculate{
 	
 	
 	private ArrayList<post> post=new ArrayList<post>();

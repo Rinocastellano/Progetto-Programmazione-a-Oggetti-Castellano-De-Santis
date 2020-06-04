@@ -6,5 +6,5 @@ import univpm.it.CastelDeSa.progettoOOP.model.post;
 
 public interface filter {
 
-	public  ArrayList<post> doFilter(ArrayList<post> post);
+	public  ArrayList<post> doFilter();
 }

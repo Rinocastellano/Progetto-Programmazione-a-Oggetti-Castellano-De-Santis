@@ -11,7 +11,7 @@ import univpm.it.CastelDeSa.progettoOOP.model.statNum;
  * @author Castellano Rino
  *
  */
-public interface statCalc {
+public interface statCalculate {
 	
 	public stat doStat();
 }

@@ -5,19 +5,12 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 
 import univpm.it.CastelDeSa.progettoOOP.exceptions.commandStatException;
+import univpm.it.CastelDeSa.progettoOOP.filter.filter;
 import univpm.it.CastelDeSa.progettoOOP.model.post;
-import univpm.it.CastelDeSa.progettoOOP.model.statNum;
 import univpm.it.CastelDeSa.progettoOOP.stat.statCalculate;
 
-/**
- * classe per il servizio statistica, utile alla creazione istantanea di una classe statX (X=max,avg,min,ecc.)
- * 
- * @author Castellano Rino
- *
- */
-public class statService {
-	
-	private static String dir="univpm.it.CastelDeSa.progettoOOP.stat.stat";
+public class filterService {
+	private static String dir="univpm.it.CastelDeSa.progettoOOP.filter.filter";
 	/**
 	 * Metodo calcolante la classe statistica utile per il service Stat
 	 * @param command, specifica per la statistica utile alla creazione della classe
@@ -25,14 +18,14 @@ public class statService {
 	 * @return
 	 * @throws commandStatException 
 	 */
-	public static statCalculate statFormulation(String command, ArrayList<post> post) throws commandStatException {
+	public static filter filterFormulation(String command, ArrayList<post> post) throws commandStatException {
 		
-		statCalculate newStat = null;
+		filter newFilter = null;
 		try {
 			Class <?> c = Class.forName(dir+command.substring(0, 1).toUpperCase()+command.substring(1));
 			
 			Constructor<?> con = c.getDeclaredConstructor(ArrayList.class);
-			newStat= (statCalculate) con.newInstance(post);
+			newFilter= (filter) con.newInstance(post);
 		} catch (NoSuchMethodException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -56,7 +49,7 @@ public class statService {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return newStat;
+		return newFilter;
 	}
 
 }

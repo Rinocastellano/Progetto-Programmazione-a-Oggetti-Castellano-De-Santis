@@ -4,11 +4,20 @@ import java.util.ArrayList;
 
 import univpm.it.CastelDeSa.progettoOOP.model.post;
 
-public class filterBt {
-	public  ArrayList<post> doFilter(ArrayList<post> post){
+public class filterBt implements filter{
+
+	private ArrayList<post> post= new ArrayList<post>();
+	
+	public filterBt(ArrayList<post> post) {
+		this.post=post;
+	}
+	
+	public  ArrayList<post> doFilter(){
 		ArrayList<post> postFiltered =new ArrayList<post>();
-		postFiltered=filterGt.doFilter(post);
-		return postFiltered= filterLt.doFilter(postFiltered);
+		filterGt filterG= new filterGt(postFiltered);
+		postFiltered=filterG.doFilter();
+		filterLt filterL = new filterLt(postFiltered);
+		return postFiltered= filterL.doFilter();
 	}
 	
 

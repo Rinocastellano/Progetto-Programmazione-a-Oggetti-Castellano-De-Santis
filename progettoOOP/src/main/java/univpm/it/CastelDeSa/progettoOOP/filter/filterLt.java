@@ -4,9 +4,14 @@ import java.util.ArrayList;
 
 import univpm.it.CastelDeSa.progettoOOP.model.post;
 
-public class filterLt {
+public class filterLt implements filter{
 
-	public static ArrayList<post> doFilter(ArrayList<post> post){
+	private ArrayList<post> post= new ArrayList<post>();
+	
+	public filterLt(ArrayList<post> post) {
+		this.post=post;
+	}
+	public  ArrayList<post> doFilter(){
 		ArrayList<post> postFiltered =new ArrayList<post>();
 		int n=100;
 		for(post p : post) {
