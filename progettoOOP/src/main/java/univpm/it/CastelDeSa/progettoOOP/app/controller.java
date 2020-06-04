@@ -12,6 +12,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import univpm.it.CastelDeSa.progettoOOP.exceptions.commandStatException;
+import univpm.it.CastelDeSa.progettoOOP.filter.filterBt;
+import univpm.it.CastelDeSa.progettoOOP.filter.filterGt;
+import univpm.it.CastelDeSa.progettoOOP.filter.filterInMult;
+import univpm.it.CastelDeSa.progettoOOP.filter.filterLt;
+import univpm.it.CastelDeSa.progettoOOP.filter.filterNInMessage;
+import univpm.it.CastelDeSa.progettoOOP.filter.filterNInMult;
 import univpm.it.CastelDeSa.progettoOOP.model.metadata;
 import univpm.it.CastelDeSa.progettoOOP.model.post;
 import univpm.it.CastelDeSa.progettoOOP.model.stat;
@@ -47,5 +53,10 @@ public class controller {
 		return newStat.doStat();
 	}
 	
+	@RequestMapping(value="filter", method=RequestMethod.GET)
+	public ArrayList<post> filter(){
+		ArrayList<post> postFiltered= filterBt.doFilter(postStorage.posts);
+		return postFiltered;
+	}
 
 }
