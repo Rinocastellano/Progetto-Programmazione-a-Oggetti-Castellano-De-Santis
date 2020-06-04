@@ -102,7 +102,7 @@ public class temporizationPosting {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+	
 		if((newPostFormatted.getTime()-lastPostFormatted.getTime())<14400000 &&(newPostFormatted.getTime()-lastPostFormatted.getTime())>-14400000) {
 		Calendar calendar= Calendar.getInstance();
 		 calendar.setTime(lastPostFormatted);

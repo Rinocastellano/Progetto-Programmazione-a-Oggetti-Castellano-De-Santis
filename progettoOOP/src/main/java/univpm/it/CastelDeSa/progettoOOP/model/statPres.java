@@ -14,6 +14,10 @@ public class statPres extends stat{
 		this.pres=pres;
 	}
 
+	public statPres() {
+		super();
+	}
+
 	public boolean getPres() {
 		return pres;
 	}

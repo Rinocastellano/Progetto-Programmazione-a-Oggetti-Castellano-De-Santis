@@ -13,9 +13,9 @@ public class post {
 		this.message=m;
 	}
 	
-	public post(String c) {
-		this.created_time=c;
-	}
+	//public post(String c) {
+		//this.created_time=c;
+	//}
 
 	public String getCreated_time() {
 		return created_time;
@@ -43,7 +43,7 @@ public class post {
 	
 	@Override
 	public String toString() {
-		return "Message: " +this.getMessage()+"\nCreated time: "+this.getCreated_time()+"\n";
+		return "Message: " +this.getMessage()+"\nCreated time: "+this.getCreated_time()+"\n"+"id:"+this.getId();
 	}
 
 }
