@@ -39,7 +39,7 @@ public class statMax implements statCalculate {
 		}
 		max=Collections.max(map.values());
 		statNum stat= new statNum();
-		stat.setMin(max);
+		stat.setMax(max);
 		return stat;
 		
 		

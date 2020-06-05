@@ -6,7 +6,7 @@ import univpm.it.CastelDeSa.progettoOOP.model.post;
 
 public class filterInMult extends filterIn implements filter{
 	
-	public filterInMult(ArrayList<post> post, String spec) {
+	public filterInMult(ArrayList<post> post, ArrayList<String> spec) {
 		super(post,spec);
 	}
 

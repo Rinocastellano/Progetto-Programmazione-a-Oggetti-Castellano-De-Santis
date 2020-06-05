@@ -3,7 +3,7 @@ import  univpm.it.CastelDeSa.progettoOOP.*;
 import univpm.it.CastelDeSa.progettoOOP.exceptions.commandStatException;
 import univpm.it.CastelDeSa.progettoOOP.model.post;
 import univpm.it.CastelDeSa.progettoOOP.service.statService;
-import univpm.it.CastelDeSa.progettoOOP.stat.statCalc;
+import univpm.it.CastelDeSa.progettoOOP.stat.statCalculate;
 
 import static org.junit.jupiter.api.Assertions.*;
 

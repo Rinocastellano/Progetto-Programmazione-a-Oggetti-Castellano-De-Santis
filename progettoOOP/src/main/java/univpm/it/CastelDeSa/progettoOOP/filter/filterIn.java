@@ -7,10 +7,10 @@ import univpm.it.CastelDeSa.progettoOOP.model.post;
 
 public abstract class filterIn implements filter{
 	
-	protected String spec= new String();
+	protected ArrayList<String> spec= new ArrayList<String>();
 	protected ArrayList<post> post= new ArrayList<post>();
 	
-	public filterIn(ArrayList<post> post, String spec) {
+	public filterIn(ArrayList<post> post, ArrayList<String> spec) {
 		this.post=post;
 		this.spec=spec;
 	

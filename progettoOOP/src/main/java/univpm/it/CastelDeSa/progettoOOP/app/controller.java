@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import univpm.it.CastelDeSa.progettoOOP.exceptions.commandStatException;
@@ -22,7 +23,7 @@ import univpm.it.CastelDeSa.progettoOOP.service.postStorage;
 import univpm.it.CastelDeSa.progettoOOP.service.statService;
 import univpm.it.CastelDeSa.progettoOOP.service.temporizationPosting;
 import univpm.it.CastelDeSa.progettoOOP.stat.statAvg;
-import univpm.it.CastelDeSa.progettoOOP.stat.statCalc;
+import univpm.it.CastelDeSa.progettoOOP.stat.statCalculate;
 import univpm.it.CastelDeSa.progettoOOP.stat.statMax;
 
 @RestController
@@ -43,16 +44,24 @@ public class controller {
 		return temporizationPosting.temporizzatedPosting(post, postStorage.posts);
 	}
 	
-	@RequestMapping(value="statNum", method=RequestMethod.POST)
-	public stat statNumPost(@RequestBody stat statistic) throws commandStatException {
-		statCalc newStat= statService.statFormulation(statistic.getSpec(), postStorage.posts);
+	@RequestMapping(value="statNum", method=RequestMethod.GET)
+	public stat statNumPost(@RequestParam(value="statNum") String spec) throws commandStatException {
+		statCalculate newStat= statService.statFormulation(spec, postStorage.posts);
 		return newStat.doStat();
 	}
 	
-	@RequestMapping(value="filter", method=RequestMethod.POST)
-	public ArrayList<post> filter(@RequestBody String command) throws commandStatException{
-		filter newFilter= filterService.filterFormulation(command, postStorage.posts);
+	@RequestMapping(value="filter", method=RequestMethod.GET)
+	public ArrayList<post> filter(@RequestParam(value="field") String command, @RequestParam(value="param1") ArrayList<String> param) throws commandStatException{
+		filter newFilter= filterService.filterFormulation(command, postStorage.posts,param);
 		return newFilter.doFilter();
 	}
+	
+	/*@RequestMapping(value="filter",method=RequestMethod.POST)
+	public stat statFiltered(@RequestParam(value="field") String command, @RequestBody stat statistic) throws commandStatException {
+		ArrayList<post> postFiltered= filterService.filterFormulation(command, postStorage.posts).doFilter();
+		statCalculate newStat= statService.statFormulation(statistic.getSpec(), postFiltered);
+		return newStat.doStat();
+		
+	}*/
 
 }

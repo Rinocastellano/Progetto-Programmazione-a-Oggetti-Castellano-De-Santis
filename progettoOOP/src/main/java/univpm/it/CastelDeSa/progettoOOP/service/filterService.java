@@ -18,14 +18,14 @@ public class filterService {
 	 * @return
 	 * @throws commandStatException 
 	 */
-	public static filter filterFormulation(String command, ArrayList<post> post) throws commandStatException {
+	public static filter filterFormulation(String command, ArrayList<post> post, ArrayList<String> param) throws commandStatException {
 		
 		filter newFilter = null;
 		try {
 			Class <?> c = Class.forName(dir+command.substring(0, 1).toUpperCase()+command.substring(1));
 			
-			Constructor<?> con = c.getDeclaredConstructor(ArrayList.class);
-			newFilter= (filter) con.newInstance(post);
+			Constructor<?> con = c.getDeclaredConstructor(ArrayList.class, ArrayList.class);
+			newFilter= (filter) con.newInstance(post,param);
 		} catch (NoSuchMethodException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
