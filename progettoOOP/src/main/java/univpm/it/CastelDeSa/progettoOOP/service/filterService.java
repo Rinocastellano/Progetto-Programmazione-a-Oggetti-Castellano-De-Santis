@@ -21,6 +21,7 @@ public class filterService {
 	public static filter filterFormulation(String command, ArrayList<post> post, ArrayList<String> param) throws commandStatException {
 		
 		filter newFilter = null;
+		
 		try {
 			Class <?> c = Class.forName(dir+command.substring(0, 1).toUpperCase()+command.substring(1));
 			

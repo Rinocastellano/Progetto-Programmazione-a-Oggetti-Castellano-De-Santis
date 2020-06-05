@@ -3,6 +3,7 @@ package univpm.it.CastelDeSa.progettoOOP.app;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import org.apache.hc.core5.http.ParseException;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,6 +19,7 @@ import univpm.it.CastelDeSa.progettoOOP.model.metadata;
 import univpm.it.CastelDeSa.progettoOOP.model.post;
 import univpm.it.CastelDeSa.progettoOOP.model.stat;
 import univpm.it.CastelDeSa.progettoOOP.model.statNum;
+import univpm.it.CastelDeSa.progettoOOP.service.andOrFilter;
 import univpm.it.CastelDeSa.progettoOOP.service.filterService;
 import univpm.it.CastelDeSa.progettoOOP.service.postStorage;
 import univpm.it.CastelDeSa.progettoOOP.service.statService;
@@ -25,6 +27,7 @@ import univpm.it.CastelDeSa.progettoOOP.service.temporizationPosting;
 import univpm.it.CastelDeSa.progettoOOP.stat.statAvg;
 import univpm.it.CastelDeSa.progettoOOP.stat.statCalculate;
 import univpm.it.CastelDeSa.progettoOOP.stat.statMax;
+import util.wrapperObject;
 
 @RestController
 public class controller {
@@ -44,24 +47,23 @@ public class controller {
 		return temporizationPosting.temporizzatedPosting(post, postStorage.posts);
 	}
 	
-	@RequestMapping(value="statNum", method=RequestMethod.GET)
+	@RequestMapping(value="statAllPost", method=RequestMethod.GET)
 	public stat statNumPost(@RequestParam(value="statNum") String spec) throws commandStatException {
 		statCalculate newStat= statService.statFormulation(spec, postStorage.posts);
 		return newStat.doStat();
 	}
 	
-	@RequestMapping(value="filter", method=RequestMethod.GET)
-	public ArrayList<post> filter(@RequestParam(value="field") String command, @RequestParam(value="param1") ArrayList<String> param) throws commandStatException{
-		filter newFilter= filterService.filterFormulation(command, postStorage.posts,param);
-		return newFilter.doFilter();
+	@RequestMapping(value="filter", method=RequestMethod.POST)
+	public ArrayList<post> filter(@RequestParam(value="type")String type,@RequestBody HashMap<String,ArrayList<String>> map) throws commandStatException{
+			return andOrFilter.andOrFiltering(type, postStorage.posts, map);
 	}
 	
-	/*@RequestMapping(value="filter",method=RequestMethod.POST)
-	public stat statFiltered(@RequestParam(value="field") String command, @RequestBody stat statistic) throws commandStatException {
-		ArrayList<post> postFiltered= filterService.filterFormulation(command, postStorage.posts).doFilter();
-		statCalculate newStat= statService.statFormulation(statistic.getSpec(), postFiltered);
+	@RequestMapping(value="filterWithStat",method=RequestMethod.POST)
+	public stat statFiltered(@RequestParam(value="type") String type,@RequestParam(value="stat") String stat, @RequestBody HashMap<String,ArrayList<String>> map) throws commandStatException {
+		ArrayList<post> postFiltered=andOrFilter.andOrFiltering(type, postStorage.posts, map);
+		statCalculate newStat= statService.statFormulation(stat, postFiltered);
 		return newStat.doStat();
 		
-	}*/
+	}
 
 }
