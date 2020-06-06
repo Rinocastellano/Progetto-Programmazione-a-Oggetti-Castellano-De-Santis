@@ -1,4 +1,4 @@
-package util;
+package univpm.it.CastelDeSa.progettoOOP.util;
 
 import java.io.IOException;
 import java.net.MalformedURLException;

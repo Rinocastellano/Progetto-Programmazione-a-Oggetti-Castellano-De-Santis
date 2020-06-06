@@ -17,9 +17,9 @@ import univpm.it.CastelDeSa.progettoOOP.exceptions.badReqException;
 import univpm.it.CastelDeSa.progettoOOP.exceptions.fewStorageMessageException;
 import univpm.it.CastelDeSa.progettoOOP.exceptions.notFoundMethodException;
 import univpm.it.CastelDeSa.progettoOOP.model.post;
-import util.httpRequest;
-import util.reading;
-import util.writing;
+import univpm.it.CastelDeSa.progettoOOP.util.httpRequest;
+import univpm.it.CastelDeSa.progettoOOP.util.reading;
+import univpm.it.CastelDeSa.progettoOOP.util.writing;
 
 /**
  * classe utile all'inserimento di post programmati randomici presi da file esterno

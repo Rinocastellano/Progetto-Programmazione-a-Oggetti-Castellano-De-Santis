@@ -11,7 +11,8 @@ import java.util.Map;
 import java.util.Set;
 
 import univpm.it.CastelDeSa.progettoOOP.exceptions.betweenWrongValueException;
-import univpm.it.CastelDeSa.progettoOOP.exceptions.commandStatException;
+import univpm.it.CastelDeSa.progettoOOP.exceptions.commandException;
+
 import univpm.it.CastelDeSa.progettoOOP.filter.filter;
 import univpm.it.CastelDeSa.progettoOOP.model.post;
 
@@ -26,7 +27,7 @@ public class andOrFilter {
 	 * @throws commandStatException
 	 * @throws betweenWrongValueException
 	 */
-	public static ArrayList<post> andOrFiltering(String type,ArrayList<post> post, HashMap<String,ArrayList<String>> map) throws commandStatException, betweenWrongValueException{
+	public static ArrayList<post> andOrFiltering(String type,ArrayList<post> post, HashMap<String,ArrayList<String>> map) throws commandException, betweenWrongValueException{
 		ArrayList<post> postFiltered2= new ArrayList<post>();
 		ArrayList<post> postFiltered1= new ArrayList<post>();
 		int i=0;

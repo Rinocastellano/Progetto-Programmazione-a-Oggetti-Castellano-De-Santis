@@ -15,7 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import univpm.it.CastelDeSa.progettoOOP.exceptions.badReqException;
 import univpm.it.CastelDeSa.progettoOOP.exceptions.betweenWrongValueException;
-import univpm.it.CastelDeSa.progettoOOP.exceptions.commandStatException;
+import univpm.it.CastelDeSa.progettoOOP.exceptions.commandException;
+
 import univpm.it.CastelDeSa.progettoOOP.exceptions.fewStorageMessageException;
 import univpm.it.CastelDeSa.progettoOOP.exceptions.notFoundMethodException;
 import univpm.it.CastelDeSa.progettoOOP.filter.*;
@@ -82,7 +83,7 @@ public class controller {
 	 * @throws commandStatException
 	 */
 	@RequestMapping(value="statAllPost", method=RequestMethod.GET)
-	public stat statNumPost(@RequestParam(value="statNum") String spec) throws commandStatException {
+	public stat statNumPost(@RequestParam(value="statNum") String spec) throws commandException {
 		statCalculate newStat= statService.statFormulation(spec, postStorage.posts);
 		return newStat.doStat();
 	}
@@ -97,7 +98,7 @@ public class controller {
 	 * @throws betweenWrongValueException
 	 */
 	@RequestMapping(value="filter", method=RequestMethod.POST)
-	public ArrayList<post> filter(@RequestParam(value="type")String type,@RequestBody HashMap<String,ArrayList<String>> map) throws commandStatException, betweenWrongValueException{
+	public ArrayList<post> filter(@RequestParam(value="type")String type,@RequestBody HashMap<String,ArrayList<String>> map) throws commandException, betweenWrongValueException{
 			return andOrFilter.andOrFiltering(type, postStorage.posts, map);
 	}
 	
@@ -112,7 +113,7 @@ public class controller {
 	 * @throws betweenWrongValueException
 	 */
 	@RequestMapping(value="filterWithStat",method=RequestMethod.POST)
-	public stat statFiltered(@RequestParam(value="type") String type,@RequestParam(value="stat") String stat, @RequestBody HashMap<String,ArrayList<String>> map) throws commandStatException, betweenWrongValueException {
+	public stat statFiltered(@RequestParam(value="type") String type,@RequestParam(value="stat") String stat, @RequestBody HashMap<String,ArrayList<String>> map) throws commandException, betweenWrongValueException {
 		ArrayList<post> postFiltered=andOrFilter.andOrFiltering(type, postStorage.posts, map);
 		statCalculate newStat= statService.statFormulation(stat, postFiltered);
 		return newStat.doStat();

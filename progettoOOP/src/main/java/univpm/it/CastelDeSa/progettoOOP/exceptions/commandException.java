@@ -6,12 +6,12 @@ package univpm.it.CastelDeSa.progettoOOP.exceptions;
  * @author Matteo De Santis
  *
  */
-public class commandStatException extends ClassNotFoundException {
+public class commandException extends ClassNotFoundException {
 	/**
 	 * classe costruttore
 	 * @param e , eccezione di tipo ClassNotFound
 	 */
-	public commandStatException(ClassNotFoundException e) {
+	public commandException(ClassNotFoundException e) {
 		super();
 		System.out.println("STRINGA COMMAND NON VALIDA");
 	}

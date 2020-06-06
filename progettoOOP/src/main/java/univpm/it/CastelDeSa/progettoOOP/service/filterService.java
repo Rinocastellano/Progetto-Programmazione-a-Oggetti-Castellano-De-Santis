@@ -4,7 +4,7 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 
-import univpm.it.CastelDeSa.progettoOOP.exceptions.commandStatException;
+import univpm.it.CastelDeSa.progettoOOP.exceptions.commandException;
 import univpm.it.CastelDeSa.progettoOOP.filter.filter;
 import univpm.it.CastelDeSa.progettoOOP.model.post;
 import univpm.it.CastelDeSa.progettoOOP.stat.statCalculate;
@@ -22,7 +22,7 @@ public class filterService {
 	 * @return filtro impostato secondo le specifiche
 	 * @throws commandStatException 
 	 */
-	public static filter filterFormulation(String command, ArrayList<post> post, ArrayList<String> param) throws commandStatException {
+	public static filter filterFormulation(String command, ArrayList<post> post, ArrayList<String> param) throws commandException {
 		
 		filter newFilter = null;
 		
@@ -40,7 +40,7 @@ public class filterService {
 		} catch (ClassNotFoundException e) {
 		// TODO Auto-generated catch block
 		//e.printStackTrace();
-		throw new commandStatException(e);
+		throw new commandException(e);
 		} catch (InstantiationException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
