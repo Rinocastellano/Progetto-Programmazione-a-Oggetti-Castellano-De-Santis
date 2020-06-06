@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_VDgQAKfeEeq9jdHExF1Hqw" name="univpm.it.CastelDeSa.progettoOOP.">
+  <packagedElement xmi:type="uml:Package" xmi:id="_tcZGcKfeEeq9jdHExF1Hqw" name="app">
+    <packageImport xmi:id="_i2rAwKflEeq9jdHExF1Hqw">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Class" xmi:id="_AQ-78KfhEeq9jdHExF1Hqw" name="app" visibility="public">
+      <ownedOperation xmi:id="_GSjDgKfmEeq9jdHExF1Hqw" name="main" isStatic="true"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_GSd9QKfhEeq9jdHExF1Hqw" name="controller" visibility="public">
+      <ownedOperation xmi:id="_QwWfIKfmEeq9jdHExF1Hqw" name="post() : ArrayList&lt;post>"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_HIvv4KffEeq9jdHExF1Hqw" name="service">
+    <packagedElement xmi:type="uml:Class" xmi:id="_L9fmYKfhEeq9jdHExF1Hqw" name="andOrFileFilter" visibility="public"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_TxoREKfhEeq9jdHExF1Hqw" name="filterService" visibility="public"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_Y6rOgKfhEeq9jdHExF1Hqw" name="postStorage" visibility="public"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_a5azIKfhEeq9jdHExF1Hqw" name="statService" visibility="public"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_bfU8kKfhEeq9jdHExF1Hqw" name="temporizationPosting" visibility="public"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_Zh7GoKffEeq9jdHExF1Hqw" name="filter">
+    <packagedElement xmi:type="uml:Class" xmi:id="_-VnmAKfhEeq9jdHExF1Hqw" name="filterBt" visibility="public"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="__Aa2gKfhEeq9jdHExF1Hqw" name="filterGt" visibility="public"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="__h6aAKfhEeq9jdHExF1Hqw" name="filterLt" visibility="public"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_BDL_gKfiEeq9jdHExF1Hqw" name="filterIn" visibility="public"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_B7WWkKfiEeq9jdHExF1Hqw" name="filterNInMessage" visibility="public"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_I8VtEKfiEeq9jdHExF1Hqw" name="filterInMessage" visibility="public"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_JlQHMKfiEeq9jdHExF1Hqw" name="filterInMult" visibility="public"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_KGB5AKfiEeq9jdHExF1Hqw" name="filterNInMult" visibility="public"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_Ki9FkKfiEeq9jdHExF1Hqw" name="Class9" visibility="public"/>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_P3XlgKfiEeq9jdHExF1Hqw" name="filter" visibility="public"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_mExjMKffEeq9jdHExF1Hqw" name="stat">
+    <packagedElement xmi:type="uml:Class" xmi:id="_4ZS8EKfiEeq9jdHExF1Hqw" name="statMax" visibility="public"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_44kSAKfiEeq9jdHExF1Hqw" name="statAvg" visibility="public"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_5WHJoKfiEeq9jdHExF1Hqw" name="statMin" visibility="public"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_5z-KUKfiEeq9jdHExF1Hqw" name="statNumPost" visibility="public"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_6i6T8KfiEeq9jdHExF1Hqw" name="StatPresMult" visibility="public"/>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_7KXVgKfiEeq9jdHExF1Hqw" name="statCalculate" visibility="public"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_rr_DUKffEeq9jdHExF1Hqw" name="exceptions">
+    <packagedElement xmi:type="uml:Class" xmi:id="_4ZgiAKfjEeq9jdHExF1Hqw" name="commandException" visibility="public"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_4z9CUKfjEeq9jdHExF1Hqw" name="badReqException" visibility="public"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_5OPKkKfjEeq9jdHExF1Hqw" name="fewStorageMessageException" visibility="public"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_5njpgKfjEeq9jdHExF1Hqw" name="betweenWrongValueException" visibility="public"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_6FzrwKfjEeq9jdHExF1Hqw" name="notFoundMethodException" visibility="public"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_6zeqEKfjEeq9jdHExF1Hqw" name="urlNotFoundException" visibility="public"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_0lAScKffEeq9jdHExF1Hqw" name="utill">
+    <packagedElement xmi:type="uml:Class" xmi:id="_ZwCB0KfkEeq9jdHExF1Hqw" name="parsing" visibility="public"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_aTjloKfkEeq9jdHExF1Hqw" name="httpRequest" visibility="public"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_a4A9kKfkEeq9jdHExF1Hqw" name="reading" visibility="public"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_baHlEKfkEeq9jdHExF1Hqw" name="writing" visibility="public"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_aT12UKfgEeq9jdHExF1Hqw" name="model">
+    <packagedElement xmi:type="uml:Class" xmi:id="_3JUQAKfkEeq9jdHExF1Hqw" name="metadata" visibility="public"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_6d4YEKfkEeq9jdHExF1Hqw" name="post" visibility="public">
+      <ownedOperation xmi:id="_JJjQYKfnEeq9jdHExF1Hqw" name="post ">
+        <ownedParameter xmi:id="_LiCxwKfnEeq9jdHExF1Hqw" name="createdTime">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_LyV3kKfnEeq9jdHExF1Hqw" name="id">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_MAAgIKfnEeq9jdHExF1Hqw" name="message">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_64l-IKfkEeq9jdHExF1Hqw" name="stat" visibility="public"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_7ZBxsKfkEeq9jdHExF1Hqw" name="statNum" visibility="public"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_9lY7kKfkEeq9jdHExF1Hqw" name="statPres" visibility="public"/>
+  </packagedElement>
+</uml:Model>
