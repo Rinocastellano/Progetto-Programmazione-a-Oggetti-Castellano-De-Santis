@@ -13,6 +13,7 @@ import univpm.it.CastelDeSa.progettoOOP.model.statNum;
  * classe per il calcolo del post con minor numero di caratteri(esclusi i post con foto/video, considerati di default SENZA char
  * dato un arrayList di post da analizzare, calcolo statistica
  * @author Castellano Rino
+ * @author Matteo De Santis
  *
  */
 public class statMin implements statCalculate{

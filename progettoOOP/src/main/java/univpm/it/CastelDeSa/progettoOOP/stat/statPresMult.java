@@ -13,6 +13,7 @@ import univpm.it.CastelDeSa.progettoOOP.model.statPres;
 /**
  * classe utile al calcolo del numero totale dei post
  * @author Castellano Rino
+ * @author Matteo De Santis
  *
  */
 public class statPresMult implements statCalculate{
@@ -27,15 +28,17 @@ public class statPresMult implements statCalculate{
 	 * override del metodo dell'interfaccia statCalc dostat()
 	 */
 	public  statPres doStat() {
+		int n=0;
 		statPres stat=new statPres();
-		for(post record : post) {
-			if(record.getMessage()==null) {
-				stat.setPres(true);
-				return stat;
-				
-			}
-		}
-		stat.setPres(false);
+		for(post post : post) {
+			if(post.getMessage()==null) 
+			n++;
+		 }
+		if(n!=0)
+			stat.setPres(true);
+		else
+			stat.setPres(false);
+			stat.setNumPost(n);
 		return stat;
 	}
 

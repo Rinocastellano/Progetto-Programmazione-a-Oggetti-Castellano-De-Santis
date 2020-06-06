@@ -9,7 +9,7 @@ import univpm.it.CastelDeSa.progettoOOP.model.statNum;
 /**
  * classe utile al calcolo della lunghezza media dei post
  * @author Castellano Rino
- *
+ * @author Matteo De Santis
  */
 public class statAvg implements statCalculate{
 	

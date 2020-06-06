@@ -13,8 +13,8 @@ import univpm.it.CastelDeSa.progettoOOP.stat.statCalculate;
  * classe per il servizio statistica, utile alla creazione istantanea di una classe statX (X=max,avg,min,ecc.)
  * 
  * @author Castellano Rino
- *
- */
+ * @author Matteo De Santis
+ *  */
 public class statService {
 	
 	private static String dir="univpm.it.CastelDeSa.progettoOOP.stat.stat";
@@ -22,7 +22,7 @@ public class statService {
 	 * Metodo calcolante la classe statistica utile per il service Stat
 	 * @param command, specifica per la statistica utile alla creazione della classe
 	 * @param post, arrayList di post da analizzare
-	 * @return
+	 * @return statistica impostata secondo le richieste
 	 * @throws commandStatException 
 	 */
 	public static statCalculate statFormulation(String command, ArrayList<post> post) throws commandStatException {

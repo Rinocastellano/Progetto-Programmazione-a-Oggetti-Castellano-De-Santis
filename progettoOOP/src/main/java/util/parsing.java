@@ -15,12 +15,27 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-
+import univpm.it.CastelDeSa.progettoOOP.exceptions.urlNotFoundException;
 import univpm.it.CastelDeSa.progettoOOP.model.post;
-
+/**
+* classe di parsing dato una stringa url sorgente
+* @author Castellano Rino
+* @author Matteo De Santis
+*
+*/
 public class parsing {
 
-	public static ArrayList<post> run(String url) throws MalformedURLException, JsonMappingException, JsonProcessingException, JSONException  {
+	/**
+	 * metodo di parsing per la creazione di arraylist di post
+	 * @param url , url da dove otteniamo la stringa per il parsing, alla quale si effettua una richiesta get
+	 * @return arraylist di post, l'elenco da utilizzare
+	 * @throws MalformedURLException
+	 * @throws JsonMappingException
+	 * @throws JsonProcessingException
+	 * @throws JSONException
+	 * @throws urlNotFoundException
+	 */
+	public static ArrayList<post> run(String url) throws MalformedURLException, JsonMappingException, JsonProcessingException, JSONException, urlNotFoundException  {
 		ArrayList<post>postatore=new ArrayList<post>();			
 		String str = null;
 		try {

@@ -1,16 +1,28 @@
 package univpm.it.CastelDeSa.progettoOOP.model;
-
+/**
+ * classe descrizione dell'oggetto Metadata riguardante la classe Post
+ * @author Rino Castellano
+ * @author Matteo De Santis
+ */
 public class metadata {
 	private String name;
 	private String meaning;
 	private String type;
 	
+	/**
+	 * classe costruttore
+	 * @param n , nome della caratteristica
+	 * @param m , significato del contenuto della caratteristica
+	 * @param t , tipo di formattazione
+	 */
 	public metadata(String n, String m, String t) {
 		this.name=n;
 		this.meaning=m;
 		this.type=t;
 	}
-
+/**
+ * getters/setters
+ */
 	public String getName() {
 		return name;
 	}

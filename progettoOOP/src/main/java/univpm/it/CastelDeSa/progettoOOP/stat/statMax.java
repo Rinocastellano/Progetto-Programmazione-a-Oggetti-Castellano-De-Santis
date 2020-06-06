@@ -14,6 +14,7 @@ import univpm.it.CastelDeSa.progettoOOP.model.statNum;
  * classe per il calcolo del post con max numero di caratteri, dato un ArrayList di post
  * 
  * @author Castellano Rino
+ * @author Matteo De Santis
  *
  */
 public class statMax implements statCalculate {

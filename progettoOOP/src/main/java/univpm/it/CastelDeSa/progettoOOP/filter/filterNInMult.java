@@ -4,13 +4,26 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 import univpm.it.CastelDeSa.progettoOOP.model.post;
-
-public class filterNInMult implements filter{
+/**
+ * classe di filtro arrayList di post, utile alla ricerca di post
+ * senza determinate stringhe di caratteri
+ * @author Rino Castellano
+ * @author Matteo De Santis
+ *
+ */
+public class filterNInMult extends filterIn implements filter{
 	private ArrayList<post> post= new ArrayList<post>();
-	
-	public filterNInMult(ArrayList<post> post) {
-		this.post=post;
+	/**
+	 * costruttore
+	 * @param post arrayList di post
+	 * @param param arrayList di stringhe contenenti i parametri di filtraggio
+	 */
+	public filterNInMult(ArrayList<post> post, ArrayList<String> spec) {
+		super(post,spec);
 	}
+	/**
+	 * metodo di filtraggio
+	 */
 	public ArrayList<post> doFilter(){
 		ArrayList<post> postFiltered =new ArrayList<post>();
 		postFiltered=post;

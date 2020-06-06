@@ -24,7 +24,7 @@ import util.parsing;
  * @author Matteo De Santis
  *
  */
-public abstract class postStorage {
+public class postStorage {
 	 
 	public static  ArrayList<post> posts = new ArrayList<post>();
 	static ArrayList<metadata> metadatas = new ArrayList<metadata>();
@@ -61,7 +61,5 @@ public abstract class postStorage {
     public static  ArrayList<metadata> getMetadatas(){
     	return metadatas;
     }
-    
-    public abstract ArrayList<String> GetNumbers();
 }
 

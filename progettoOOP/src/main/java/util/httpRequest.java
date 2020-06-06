@@ -16,28 +16,57 @@ import org.apache.hc.core5.http.io.entity.EntityUtils;
 import org.apache.hc.core5.http.io.entity.StringEntity;
 import org.apache.hc.core5.http.message.BasicClassicHttpRequest;
 
+import univpm.it.CastelDeSa.progettoOOP.exceptions.badReqException;
+import univpm.it.CastelDeSa.progettoOOP.exceptions.notFoundMethodException;
+/**
+ * classe che crea una richiesta http di post
+ * @author Castellano Rino
+ * @author Matteo De Santis
+ *
+ */
 public class httpRequest {
 
-	public static String postRequest(String url, String createdTime) throws IOException, ParseException, URISyntaxException {
+	/**
+	 * comando di invio richiesta POST al web
+	 * @param url , url di richiesta da inviare come HttpRequest
+	 * @param createdTime , data per la schedule post
+	 * @return messaggio di conferma post
+	 * @throws IOException
+	 * @throws ParseException
+	 * @throws URISyntaxException
+	 * @throws badReqException
+	 * @throws notFoundMethodException
+	 */
+	public static String postRequest(String url, String createdTime) throws IOException, ParseException, URISyntaxException, badReqException, notFoundMethodException {
 				//Define a postRequest request
 				HttpClient httpClient = HttpClients.createDefault();
 				URI u=new URI(url);
 		        HttpPost postRequest = new HttpPost(u);
-		               
+
 		        //Set the request post body
 		        StringEntity strEntity = new StringEntity(createdTime, Charset.forName("UTF-8"));
 		        postRequest.setEntity(strEntity);
-		         
+
 		        //Send the request; It will immediately return the response in HttpResponse object if any
 		        HttpResponse response = httpClient.execute(postRequest);
 		        //verify the valid error code first
 		        int statusCode = response.getCode();
+		        if(statusCode==400) {
+		        	throw new badReqException();
+
+		        }
+		        else if(statusCode==404) {
+		        	throw new notFoundMethodException();
+
+		        }
+		        else {
 		        System.out.println(statusCode);
 		        //HttpEntity entity=((BasicClassicHttpRequest) response).getEntity();
 		        //String responseString= EntityUtils.toString(entity);
 		        //System.out.println(responseString);
-		        
+
 		        return response.getReasonPhrase();
-		        
+		        }
+
 	}
 }

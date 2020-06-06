@@ -8,14 +8,18 @@ import univpm.it.CastelDeSa.progettoOOP.exceptions.commandStatException;
 import univpm.it.CastelDeSa.progettoOOP.filter.filter;
 import univpm.it.CastelDeSa.progettoOOP.model.post;
 import univpm.it.CastelDeSa.progettoOOP.stat.statCalculate;
-
+/**
+ * classe calcolante il tipo di filtro da utilizzare
+ * @author Rino Castellano
+ * @author Matteo De Santis
+ */
 public class filterService {
 	private static String dir="univpm.it.CastelDeSa.progettoOOP.filter.filter";
 	/**
-	 * Metodo calcolante la classe statistica utile per il service Stat
-	 * @param command, specifica per la statistica utile alla creazione della classe
+	 * Metodo creante la classe filter 
+	 * @param command, specifica per il filter utile alla creazione della classe
 	 * @param post, arrayList di post da analizzare
-	 * @return
+	 * @return filtro impostato secondo le specifiche
 	 * @throws commandStatException 
 	 */
 	public static filter filterFormulation(String command, ArrayList<post> post, ArrayList<String> param) throws commandStatException {

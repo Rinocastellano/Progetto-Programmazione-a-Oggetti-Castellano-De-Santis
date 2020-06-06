@@ -1,18 +1,32 @@
 package univpm.it.CastelDeSa.progettoOOP.service;
-
+/**
+ * classe calcolante filtraggio post
+ * @author Rino Castellano
+ * @author Matteo De Santis
+ */
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.Set;
 
+import univpm.it.CastelDeSa.progettoOOP.exceptions.betweenWrongValueException;
 import univpm.it.CastelDeSa.progettoOOP.exceptions.commandStatException;
 import univpm.it.CastelDeSa.progettoOOP.filter.filter;
 import univpm.it.CastelDeSa.progettoOOP.model.post;
 
 public class andOrFilter {
-	
-	public static ArrayList<post> andOrFiltering(String type,ArrayList<post> post, HashMap<String,ArrayList<String>> map) throws commandStatException{
+	/**
+	 * dato il tipo di filtraggio (and,or, default), l'elenco di post da filtrare ed i parametri di 
+	 * filtraggio (in,Nin,Gt,...) calcolo elenco di post che rispettano tali specifiche
+	 * @param type , specifica di filtraggio avanzata nel caso di molteplici richieste (and,or,default)
+	 * @param post , elenco di post da filtrare
+	 * @param map , hashmap avente key=tipo di filtraggio(in,gt,nin,lt,bt,...) e value=parametri di filtraggio
+	 * @return elenco dei post filtrati
+	 * @throws commandStatException
+	 * @throws betweenWrongValueException
+	 */
+	public static ArrayList<post> andOrFiltering(String type,ArrayList<post> post, HashMap<String,ArrayList<String>> map) throws commandStatException, betweenWrongValueException{
 		ArrayList<post> postFiltered2= new ArrayList<post>();
 		ArrayList<post> postFiltered1= new ArrayList<post>();
 		int i=0;
@@ -39,9 +53,6 @@ public class andOrFilter {
 		}
 		
 		return postFiltered1;
-		//filter filter1= filterService.filterFormulation(, post, map.get(key));
-		
-		//return postFiltered1=filter1.doFilter();
 		
 	}
 }

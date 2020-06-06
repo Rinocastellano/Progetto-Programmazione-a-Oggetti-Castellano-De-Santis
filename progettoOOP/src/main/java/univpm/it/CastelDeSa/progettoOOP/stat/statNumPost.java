@@ -9,6 +9,7 @@ import univpm.it.CastelDeSa.progettoOOP.model.statNum;
 /**
  * classe utile al calcolo del numero totale dei post
  * @author Castellano Rino
+ * @author Matteo De Santis
  *
  */
 public class statNumPost implements statCalculate{
