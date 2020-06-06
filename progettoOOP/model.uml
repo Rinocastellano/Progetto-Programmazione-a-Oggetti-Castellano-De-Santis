@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_VDgQAKfeEeq9jdHExF1Hqw" name="univpm.it.CastelDeSa.progettoOOP.">
+  <packagedElement xmi:type="uml:Package" xmi:id="_tcZGcKfeEeq9jdHExF1Hqw" name="app">
+    <packageImport xmi:id="_i2rAwKflEeq9jdHExF1Hqw">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Class" xmi:id="_AQ-78KfhEeq9jdHExF1Hqw" name="app" visibility="public">
+      <ownedOperation xmi:id="_GSjDgKfmEeq9jdHExF1Hqw" name="main" isStatic="true"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_GSd9QKfhEeq9jdHExF1Hqw" name="controller" visibility="public">
+      <ownedOperation xmi:id="_QwWfIKfmEeq9jdHExF1Hqw" name="post() : ArrayList&lt;post>"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_HIvv4KffEeq9jdHExF1Hqw" name="service">
+    <packagedElement xmi:type="uml:Class" xmi:id="_L9fmYKfhEeq9jdHExF1Hqw" name="andOrFileFilter" visibility="public">
+      <ownedOperation xmi:id="_uVfeYKfuEeqllfwgEMLQPg" name="andOrFiltering(String type,ArrayList&lt;post> post, HashMap&lt;String,ArrayList&lt;String>> map) : ArrayList&lt;post>" isStatic="true"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_TxoREKfhEeq9jdHExF1Hqw" name="filterService" visibility="public">
+      <ownedAttribute xmi:id="_mOEO0KfvEeqllfwgEMLQPg" name="dir : String" isStatic="true"/>
+      <ownedOperation xmi:id="_48GQsKfuEeqllfwgEMLQPg" name="filterFormulation(String command, ArrayList&lt;post> post, ArrayList&lt;String> param) : filter" isStatic="true"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_Y6rOgKfhEeq9jdHExF1Hqw" name="postStorage" visibility="public">
+      <ownedAttribute xmi:id="_LS3zsKfvEeqllfwgEMLQPg" name="posts : ArrayList&lt;post>" isStatic="true"/>
+      <ownedAttribute xmi:id="_LjbYMKfvEeqllfwgEMLQPg" name="metadatas : ArrayList&lt;metadata>" isStatic="true"/>
+      <ownedOperation xmi:id="_A0UxMKfvEeqllfwgEMLQPg" name="start(String source) " isStatic="true"/>
+      <ownedOperation xmi:id="_BAOfMKfvEeqllfwgEMLQPg" name="getPost() : ArrayList&lt;post>" isStatic="true"/>
+      <ownedOperation xmi:id="_BHp84KfvEeqllfwgEMLQPg" name="getMetadatas() : ArrayList&lt;metadata>" isStatic="true"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_a5azIKfhEeq9jdHExF1Hqw" name="statService" visibility="public">
+      <ownedAttribute xmi:id="_o_RLIKfvEeqllfwgEMLQPg" name="dir : String" isStatic="true"/>
+      <ownedOperation xmi:id="_q7Ia4KfvEeqllfwgEMLQPg" name="statFormulation(String command, ArrayList&lt;post> post) : statCalculate" isStatic="true"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_bfU8kKfhEeq9jdHExF1Hqw" name="temporizationPosting" visibility="public">
+      <ownedAttribute xmi:id="_9Gxr8KfvEeqllfwgEMLQPg" name="formatterFromPosting : SimpleDateFormat" isStatic="true"/>
+      <ownedAttribute xmi:id="_9JmWcKfvEeqllfwgEMLQPg" name="formatterFromRecord : SimpleDateFormat" isStatic="true" isDerived="true"/>
+      <ownedOperation xmi:id="_HqxPIKfwEeqllfwgEMLQPg" name="temporizzatedPosting(post newPost, ArrayList&lt;post> post) : String" isStatic="true"/>
+      <ownedOperation xmi:id="_H1R2AKfwEeqllfwgEMLQPg" name="calcoloDatePosting(String newCreatedTime, String lastCreatedTime) : String" isStatic="true"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_Zh7GoKffEeq9jdHExF1Hqw" name="filter">
+    <packagedElement xmi:type="uml:Class" xmi:id="_-VnmAKfhEeq9jdHExF1Hqw" name="filterBt" visibility="public">
+      <ownedAttribute xmi:id="_xxtYgKfsEeqllfwgEMLQPg" name="post : ArrayList&lt;post>"/>
+      <ownedAttribute xmi:id="_x5liIKfsEeqllfwgEMLQPg" name="param : ArrayList&lt;String>"/>
+      <interfaceRealization xmi:id="_5dp7EKftEeqllfwgEMLQPg" client="_-VnmAKfhEeq9jdHExF1Hqw" supplier="_P3XlgKfiEeq9jdHExF1Hqw" contract="_P3XlgKfiEeq9jdHExF1Hqw"/>
+      <ownedOperation xmi:id="_m0I3sKfsEeqllfwgEMLQPg" name="filterBt(ArrayList&lt;post> post, ArrayList&lt;String> param) "/>
+      <ownedOperation xmi:id="_okR_oKfsEeqllfwgEMLQPg" name="doFilter(): ArrayList&lt;String>"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_B7WWkKfiEeq9jdHExF1Hqw" name="filterNInMessage" visibility="public"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_KGB5AKfiEeq9jdHExF1Hqw" name="filterNInMult" visibility="public"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_Ki9FkKfiEeq9jdHExF1Hqw" name="Class9" visibility="public"/>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_P3XlgKfiEeq9jdHExF1Hqw" name="filter" visibility="public">
+      <ownedOperation xmi:id="_e5A0MKfsEeqllfwgEMLQPg" name="doFilter() : ArrayList&lt;post> "/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_BTj80KftEeqllfwgEMLQPg" name="filterGt" visibility="public">
+      <ownedAttribute xmi:id="_BTj80aftEeqllfwgEMLQPg" name="post : ArrayList&lt;post>"/>
+      <ownedAttribute xmi:id="_BTj80qftEeqllfwgEMLQPg" name="param : ArrayList&lt;String>"/>
+      <interfaceRealization xmi:id="_4hueUKftEeqllfwgEMLQPg" client="_BTj80KftEeqllfwgEMLQPg" supplier="_P3XlgKfiEeq9jdHExF1Hqw" contract="_P3XlgKfiEeq9jdHExF1Hqw"/>
+      <ownedOperation xmi:id="_BTj806ftEeqllfwgEMLQPg" name="filterGt">
+        <ownedParameter xmi:id="_MvqMsKftEeqllfwgEMLQPg" name="ArrayList&lt;post> post"/>
+        <ownedParameter xmi:id="_MvqMsaftEeqllfwgEMLQPg" name="ArrayList&lt;String> param"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_BTj81KftEeqllfwgEMLQPg" name="doFilter(): ArrayList&lt;String>"/>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_Eo5g8KftEeqllfwgEMLQPg" name="filterBt" visibility="public">
+        <ownedAttribute xmi:id="_Eo5g8aftEeqllfwgEMLQPg" name="post : ArrayList&lt;post>"/>
+        <ownedAttribute xmi:id="_Eo5g8qftEeqllfwgEMLQPg" name="param : ArrayList&lt;String>"/>
+        <ownedOperation xmi:id="_Eo5g86ftEeqllfwgEMLQPg" name="filterBt(ArrayList&lt;post> post, ArrayList&lt;String> param) "/>
+        <ownedOperation xmi:id="_Eo5g9KftEeqllfwgEMLQPg" name="doFilter(): ArrayList&lt;String>"/>
+      </nestedClassifier>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_FXfsUKftEeqllfwgEMLQPg" name="filterLt" visibility="public">
+      <ownedAttribute xmi:id="_FXfsUaftEeqllfwgEMLQPg" name="post : ArrayList&lt;post>"/>
+      <ownedAttribute xmi:id="_FXfsUqftEeqllfwgEMLQPg" name="param : ArrayList&lt;String>"/>
+      <interfaceRealization xmi:id="_Sf0_EKfuEeqllfwgEMLQPg" client="_FXfsUKftEeqllfwgEMLQPg" supplier="_P3XlgKfiEeq9jdHExF1Hqw" contract="_P3XlgKfiEeq9jdHExF1Hqw"/>
+      <ownedOperation xmi:id="_FXfsU6ftEeqllfwgEMLQPg" name="filterLt">
+        <ownedParameter xmi:id="_OU3P8KftEeqllfwgEMLQPg" name="ArrayList&lt;post> post"/>
+        <ownedParameter xmi:id="_OU33AKftEeqllfwgEMLQPg" name="ArrayList&lt;String> param"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_FXfsVKftEeqllfwgEMLQPg" name="doFilter(): ArrayList&lt;String>"/>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_FXfsVaftEeqllfwgEMLQPg" name="filterBt" visibility="public">
+        <ownedAttribute xmi:id="_FXfsVqftEeqllfwgEMLQPg" name="post : ArrayList&lt;post>"/>
+        <ownedAttribute xmi:id="_FXfsV6ftEeqllfwgEMLQPg" name="param : ArrayList&lt;String>"/>
+        <ownedOperation xmi:id="_FXfsWKftEeqllfwgEMLQPg" name="filterBt(ArrayList&lt;post> post, ArrayList&lt;String> param) "/>
+        <ownedOperation xmi:id="_FXfsWaftEeqllfwgEMLQPg" name="doFilter(): ArrayList&lt;String>"/>
+      </nestedClassifier>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_Ic4I4KftEeqllfwgEMLQPg" name="filterIn" visibility="public">
+      <ownedAttribute xmi:id="_Ic4I4aftEeqllfwgEMLQPg" name="post : ArrayList&lt;post>"/>
+      <ownedAttribute xmi:id="_Ic4I4qftEeqllfwgEMLQPg" name="param : ArrayList&lt;String>"/>
+      <interfaceRealization xmi:id="_2RgIIKftEeqllfwgEMLQPg" client="_Ic4I4KftEeqllfwgEMLQPg" supplier="_P3XlgKfiEeq9jdHExF1Hqw" contract="_P3XlgKfiEeq9jdHExF1Hqw"/>
+      <ownedOperation xmi:id="_Ic4I46ftEeqllfwgEMLQPg" name="filterIn">
+        <ownedParameter xmi:id="_Pyj9AKftEeqllfwgEMLQPg" name="ArrayList&lt;post> post"/>
+        <ownedParameter xmi:id="_Pyj9AaftEeqllfwgEMLQPg" name="ArrayList&lt;String> param"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_Ic4I5KftEeqllfwgEMLQPg" name="doFilter(): ArrayList&lt;String>"/>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_Ic4I5aftEeqllfwgEMLQPg" name="filterBt" visibility="public">
+        <ownedAttribute xmi:id="_Ic4I5qftEeqllfwgEMLQPg" name="post : ArrayList&lt;post>"/>
+        <ownedAttribute xmi:id="_Ic4I56ftEeqllfwgEMLQPg" name="param : ArrayList&lt;String>"/>
+        <ownedOperation xmi:id="_Ic4I6KftEeqllfwgEMLQPg" name="filterBt(ArrayList&lt;post> post, ArrayList&lt;String> param) "/>
+        <ownedOperation xmi:id="_Ic4I6aftEeqllfwgEMLQPg" name="doFilter(): ArrayList&lt;String>"/>
+      </nestedClassifier>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_UGcNAKftEeqllfwgEMLQPg" name="filterInMessage" visibility="public">
+      <generalization xmi:id="_EzS9oKfuEeqllfwgEMLQPg" general="_Ic4I4KftEeqllfwgEMLQPg"/>
+      <ownedAttribute xmi:id="_UGcNAaftEeqllfwgEMLQPg" name="post : ArrayList&lt;post>"/>
+      <ownedAttribute xmi:id="_UGcNAqftEeqllfwgEMLQPg" name="param : ArrayList&lt;String>"/>
+      <interfaceRealization xmi:id="_7kvjYKftEeqllfwgEMLQPg" client="_UGcNAKftEeqllfwgEMLQPg" supplier="_P3XlgKfiEeq9jdHExF1Hqw" contract="_P3XlgKfiEeq9jdHExF1Hqw"/>
+      <ownedOperation xmi:id="_UGcNA6ftEeqllfwgEMLQPg" name="filterInMessage">
+        <ownedParameter xmi:id="_V8kBIKftEeqllfwgEMLQPg" name="ArrayList&lt;post> post"/>
+        <ownedParameter xmi:id="_V8koMKftEeqllfwgEMLQPg" name="ArrayList&lt;String> param"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_UGcNBKftEeqllfwgEMLQPg" name="doFilter(): ArrayList&lt;String>"/>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_UGcNBaftEeqllfwgEMLQPg" name="filterBt" visibility="public">
+        <ownedAttribute xmi:id="_UGcNBqftEeqllfwgEMLQPg" name="post : ArrayList&lt;post>"/>
+        <ownedAttribute xmi:id="_UGcNB6ftEeqllfwgEMLQPg" name="param : ArrayList&lt;String>"/>
+        <ownedOperation xmi:id="_UGcNCKftEeqllfwgEMLQPg" name="filterBt(ArrayList&lt;post> post, ArrayList&lt;String> param) "/>
+        <ownedOperation xmi:id="_UGcNCaftEeqllfwgEMLQPg" name="doFilter(): ArrayList&lt;String>"/>
+      </nestedClassifier>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_XCB0YKftEeqllfwgEMLQPg" name="filterInMult" visibility="public">
+      <generalization xmi:id="_FpcigKfuEeqllfwgEMLQPg" general="_Ic4I4KftEeqllfwgEMLQPg"/>
+      <ownedAttribute xmi:id="_XCCbcKftEeqllfwgEMLQPg" name="post : ArrayList&lt;post>"/>
+      <ownedAttribute xmi:id="_XCCbcaftEeqllfwgEMLQPg" name="param : ArrayList&lt;String>"/>
+      <interfaceRealization xmi:id="_6nIroKftEeqllfwgEMLQPg" client="_XCB0YKftEeqllfwgEMLQPg" supplier="_P3XlgKfiEeq9jdHExF1Hqw" contract="_P3XlgKfiEeq9jdHExF1Hqw"/>
+      <ownedOperation xmi:id="_XCCbcqftEeqllfwgEMLQPg" name="filterInMessage">
+        <ownedParameter xmi:id="_arpmcKftEeqllfwgEMLQPg" name="ArrayList&lt;post> post"/>
+        <ownedParameter xmi:id="_arpmcaftEeqllfwgEMLQPg" name="ArrayList&lt;String> param"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_XCCbc6ftEeqllfwgEMLQPg" name="doFilter(): ArrayList&lt;String>"/>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_XCCbdKftEeqllfwgEMLQPg" name="filterBt" visibility="public">
+        <ownedAttribute xmi:id="_XCCbdaftEeqllfwgEMLQPg" name="post : ArrayList&lt;post>"/>
+        <ownedAttribute xmi:id="_XCCbdqftEeqllfwgEMLQPg" name="param : ArrayList&lt;String>"/>
+        <ownedOperation xmi:id="_XCCbd6ftEeqllfwgEMLQPg" name="filterBt(ArrayList&lt;post> post, ArrayList&lt;String> param) "/>
+        <ownedOperation xmi:id="_XCCbeKftEeqllfwgEMLQPg" name="doFilter(): ArrayList&lt;String>"/>
+      </nestedClassifier>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_djmrAKftEeqllfwgEMLQPg" name="filterNinMessage" visibility="public">
+      <generalization xmi:id="_D7ADsKfuEeqllfwgEMLQPg" general="_Ic4I4KftEeqllfwgEMLQPg"/>
+      <ownedAttribute xmi:id="_djmrAaftEeqllfwgEMLQPg" name="post : ArrayList&lt;post>"/>
+      <ownedAttribute xmi:id="_djmrAqftEeqllfwgEMLQPg" name="param : ArrayList&lt;String>"/>
+      <interfaceRealization xmi:id="__6Z8EKftEeqllfwgEMLQPg" client="_djmrAKftEeqllfwgEMLQPg" supplier="_P3XlgKfiEeq9jdHExF1Hqw" contract="_P3XlgKfiEeq9jdHExF1Hqw"/>
+      <ownedOperation xmi:id="_djmrA6ftEeqllfwgEMLQPg" name="filterNinMessage">
+        <ownedParameter xmi:id="_hTdn8KftEeqllfwgEMLQPg" name="ArrayList&lt;post> post"/>
+        <ownedParameter xmi:id="_hTdn8aftEeqllfwgEMLQPg" name="ArrayList&lt;String> param"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_djmrBKftEeqllfwgEMLQPg" name="doFilter(): ArrayList&lt;String>"/>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_djmrBaftEeqllfwgEMLQPg" name="filterBt" visibility="public">
+        <ownedAttribute xmi:id="_djmrBqftEeqllfwgEMLQPg" name="post : ArrayList&lt;post>"/>
+        <ownedAttribute xmi:id="_djmrB6ftEeqllfwgEMLQPg" name="param : ArrayList&lt;String>"/>
+        <ownedOperation xmi:id="_djmrCKftEeqllfwgEMLQPg" name="filterBt(ArrayList&lt;post> post, ArrayList&lt;String> param) "/>
+        <ownedOperation xmi:id="_djmrCaftEeqllfwgEMLQPg" name="doFilter(): ArrayList&lt;String>"/>
+      </nestedClassifier>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_dvntwKftEeqllfwgEMLQPg" name="filterNinMult" visibility="public">
+      <generalization xmi:id="_C_ePkKfuEeqllfwgEMLQPg" general="_Ic4I4KftEeqllfwgEMLQPg"/>
+      <ownedAttribute xmi:id="_dvntwaftEeqllfwgEMLQPg" name="post : ArrayList&lt;post>"/>
+      <ownedAttribute xmi:id="_dvntwqftEeqllfwgEMLQPg" name="param : ArrayList&lt;String>"/>
+      <interfaceRealization xmi:id="_AxVkEKfuEeqllfwgEMLQPg" client="_dvntwKftEeqllfwgEMLQPg" supplier="_P3XlgKfiEeq9jdHExF1Hqw" contract="_P3XlgKfiEeq9jdHExF1Hqw"/>
+      <ownedOperation xmi:id="_dvntw6ftEeqllfwgEMLQPg" name="filterNinMult">
+        <ownedParameter xmi:id="_j2_UoKftEeqllfwgEMLQPg" name="ArrayList&lt;post> post"/>
+        <ownedParameter xmi:id="_j2_UoaftEeqllfwgEMLQPg" name="ArrayList&lt;String> param"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_dvntxKftEeqllfwgEMLQPg" name="doFilter(): ArrayList&lt;String>"/>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_dvntxaftEeqllfwgEMLQPg" name="filterBt" visibility="public">
+        <ownedAttribute xmi:id="_dvntxqftEeqllfwgEMLQPg" name="post : ArrayList&lt;post>"/>
+        <ownedAttribute xmi:id="_dvntx6ftEeqllfwgEMLQPg" name="param : ArrayList&lt;String>"/>
+        <ownedOperation xmi:id="_dvntyKftEeqllfwgEMLQPg" name="filterBt(ArrayList&lt;post> post, ArrayList&lt;String> param) "/>
+        <ownedOperation xmi:id="_dvntyaftEeqllfwgEMLQPg" name="doFilter(): ArrayList&lt;String>"/>
+      </nestedClassifier>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_mExjMKffEeq9jdHExF1Hqw" name="stat">
+    <packagedElement xmi:type="uml:Class" xmi:id="_4ZS8EKfiEeq9jdHExF1Hqw" name="statMax" visibility="public"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_44kSAKfiEeq9jdHExF1Hqw" name="statAvg" visibility="public"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_5WHJoKfiEeq9jdHExF1Hqw" name="statMin" visibility="public"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_5z-KUKfiEeq9jdHExF1Hqw" name="statNumPost" visibility="public"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_6i6T8KfiEeq9jdHExF1Hqw" name="StatPresMult" visibility="public"/>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_7KXVgKfiEeq9jdHExF1Hqw" name="statCalculate" visibility="public"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_rr_DUKffEeq9jdHExF1Hqw" name="exceptions">
+    <packagedElement xmi:type="uml:Class" xmi:id="_4ZgiAKfjEeq9jdHExF1Hqw" name="commandException" visibility="public">
+      <ownedOperation xmi:id="_Qf5nUKfxEeqllfwgEMLQPg" name="commandException"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_4z9CUKfjEeq9jdHExF1Hqw" name="badReqException" visibility="public">
+      <ownedOperation xmi:id="_FvW14KfxEeqllfwgEMLQPg" name="badReqException"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_5OPKkKfjEeq9jdHExF1Hqw" name="fewStorageMessageException" visibility="public">
+      <ownedOperation xmi:id="_X29UcKfxEeqllfwgEMLQPg" name="fewStorageMessageException"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_5njpgKfjEeq9jdHExF1Hqw" name="betweenWrongValueException" visibility="public">
+      <ownedOperation xmi:id="_I1364KfxEeqllfwgEMLQPg" name="betweenWrongValueException"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_6FzrwKfjEeq9jdHExF1Hqw" name="notFoundMethodException" visibility="public">
+      <ownedOperation xmi:id="_VT3soKfxEeqllfwgEMLQPg" name="notFoundMethodException"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_6zeqEKfjEeq9jdHExF1Hqw" name="urlNotFoundException" visibility="public">
+      <ownedOperation xmi:id="_SU6BIKfxEeqllfwgEMLQPg" name="urlNotFoundException"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_0lAScKffEeq9jdHExF1Hqw" name="utill">
+    <packagedElement xmi:type="uml:Class" xmi:id="_ZwCB0KfkEeq9jdHExF1Hqw" name="parsing" visibility="public">
+      <ownedOperation xmi:id="_oeeVwKfwEeqllfwgEMLQPg" name="run(String url) : ArrayList&lt;post>"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_aTjloKfkEeq9jdHExF1Hqw" name="httpRequest" visibility="public">
+      <ownedOperation xmi:id="_gspYMKfwEeqllfwgEMLQPg" name="postRequest(String url, String createdTime) : String"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_a4A9kKfkEeq9jdHExF1Hqw" name="reading" visibility="public">
+      <ownedOperation xmi:id="_wY2yYKfwEeqllfwgEMLQPg" name="readUrl (String url) : String"/>
+      <ownedOperation xmi:id="_wkwgYKfwEeqllfwgEMLQPg" name="readFile(String file) : String"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_baHlEKfkEeq9jdHExF1Hqw" name="writing" visibility="public">
+      <ownedOperation xmi:id="_4WNqgKfwEeqllfwgEMLQPg" name="writingFile(String file, ArrayList&lt;String> post) "/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_aT12UKfgEeq9jdHExF1Hqw" name="model">
+    <packagedElement xmi:type="uml:Class" xmi:id="_3JUQAKfkEeq9jdHExF1Hqw" name="metadata" visibility="public"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_6d4YEKfkEeq9jdHExF1Hqw" name="post" visibility="public">
+      <ownedOperation xmi:id="_JJjQYKfnEeq9jdHExF1Hqw" name="post ">
+        <ownedParameter xmi:id="_LiCxwKfnEeq9jdHExF1Hqw" name="createdTime">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_LyV3kKfnEeq9jdHExF1Hqw" name="id">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_MAAgIKfnEeq9jdHExF1Hqw" name="message">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_64l-IKfkEeq9jdHExF1Hqw" name="stat" visibility="public"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_7ZBxsKfkEeq9jdHExF1Hqw" name="statNum" visibility="public"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_9lY7kKfkEeq9jdHExF1Hqw" name="statPres" visibility="public"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_VklzwKfyEeqllfwgEMLQPg" name="Amministratore page Fb">
+    <eAnnotations xmi:id="_Vkma0KfyEeqllfwgEMLQPg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <details xmi:id="_Vkma0afyEeqllfwgEMLQPg" key="Human"/>
+    </eAnnotations>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_Y-Wk4KfyEeqllfwgEMLQPg" name="Ottieni elenco post pubblicati"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_bWSFkKfyEeqllfwgEMLQPg" name="Ottieni elenco metadata dei post"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_dsuYgKfyEeqllfwgEMLQPg" name="Post programmato con distanza minima(4h) da Newest post"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_mtl8EKfyEeqllfwgEMLQPg" name="Ottieni statistiche"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_ovgJcKfyEeqllfwgEMLQPg" name="Ottieni elenco post filtrato"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_qqX6sKfyEeqllfwgEMLQPg" name="Ottieni statistiche di elenco post filtrato"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_tUsy8KfyEeqllfwgEMLQPg" memberEnd="_tUsy8afyEeqllfwgEMLQPg _tUtaAKfyEeqllfwgEMLQPg">
+    <ownedEnd xmi:id="_tUsy8afyEeqllfwgEMLQPg" type="_VklzwKfyEeqllfwgEMLQPg" association="_tUsy8KfyEeqllfwgEMLQPg"/>
+    <ownedEnd xmi:id="_tUtaAKfyEeqllfwgEMLQPg" type="_Y-Wk4KfyEeqllfwgEMLQPg" association="_tUsy8KfyEeqllfwgEMLQPg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_t5e7AKfyEeqllfwgEMLQPg" memberEnd="_t5e7AafyEeqllfwgEMLQPg _t5e7AqfyEeqllfwgEMLQPg">
+    <ownedEnd xmi:id="_t5e7AafyEeqllfwgEMLQPg" type="_VklzwKfyEeqllfwgEMLQPg" association="_t5e7AKfyEeqllfwgEMLQPg"/>
+    <ownedEnd xmi:id="_t5e7AqfyEeqllfwgEMLQPg" type="_bWSFkKfyEeqllfwgEMLQPg" association="_t5e7AKfyEeqllfwgEMLQPg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_uX_b8KfyEeqllfwgEMLQPg" memberEnd="_uYADAKfyEeqllfwgEMLQPg _uYADAafyEeqllfwgEMLQPg">
+    <ownedEnd xmi:id="_uYADAKfyEeqllfwgEMLQPg" type="_VklzwKfyEeqllfwgEMLQPg" association="_uX_b8KfyEeqllfwgEMLQPg"/>
+    <ownedEnd xmi:id="_uYADAafyEeqllfwgEMLQPg" type="_dsuYgKfyEeqllfwgEMLQPg" association="_uX_b8KfyEeqllfwgEMLQPg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_vKsrQKfyEeqllfwgEMLQPg" memberEnd="_vKsrQafyEeqllfwgEMLQPg _vKtSUKfyEeqllfwgEMLQPg">
+    <ownedEnd xmi:id="_vKsrQafyEeqllfwgEMLQPg" type="_VklzwKfyEeqllfwgEMLQPg" association="_vKsrQKfyEeqllfwgEMLQPg"/>
+    <ownedEnd xmi:id="_vKtSUKfyEeqllfwgEMLQPg" type="_mtl8EKfyEeqllfwgEMLQPg" association="_vKsrQKfyEeqllfwgEMLQPg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_vqAdcKfyEeqllfwgEMLQPg" memberEnd="_vqAdcafyEeqllfwgEMLQPg _vqBEgKfyEeqllfwgEMLQPg">
+    <ownedEnd xmi:id="_vqAdcafyEeqllfwgEMLQPg" type="_VklzwKfyEeqllfwgEMLQPg" association="_vqAdcKfyEeqllfwgEMLQPg"/>
+    <ownedEnd xmi:id="_vqBEgKfyEeqllfwgEMLQPg" type="_ovgJcKfyEeqllfwgEMLQPg" association="_vqAdcKfyEeqllfwgEMLQPg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_wRn3EKfyEeqllfwgEMLQPg" memberEnd="_wRoeIKfyEeqllfwgEMLQPg _wRoeIafyEeqllfwgEMLQPg">
+    <ownedEnd xmi:id="_wRoeIKfyEeqllfwgEMLQPg" type="_VklzwKfyEeqllfwgEMLQPg" association="_wRn3EKfyEeqllfwgEMLQPg"/>
+    <ownedEnd xmi:id="_wRoeIafyEeqllfwgEMLQPg" type="_qqX6sKfyEeqllfwgEMLQPg" association="_wRn3EKfyEeqllfwgEMLQPg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_0DV1MKfyEeqllfwgEMLQPg" name="Max length">
+    <extend xmi:id="_YgDp4KfzEeqllfwgEMLQPg" extendedCase="_mtl8EKfyEeqllfwgEMLQPg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_3Q0d0KfyEeqllfwgEMLQPg" name="Min length">
+    <extend xmi:id="_ZEsoAKfzEeqllfwgEMLQPg" extendedCase="_mtl8EKfyEeqllfwgEMLQPg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_4vrogKfyEeqllfwgEMLQPg" name="Avg length">
+    <extend xmi:id="_Zt9AYKfzEeqllfwgEMLQPg" extendedCase="_mtl8EKfyEeqllfwgEMLQPg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_DUMwIKfzEeqllfwgEMLQPg" name="Num Post">
+    <extend xmi:id="_aT4X8KfzEeqllfwgEMLQPg" extendedCase="_mtl8EKfyEeqllfwgEMLQPg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_LiauwKfzEeqllfwgEMLQPg" name="Contiene multimedia">
+    <extend xmi:id="_YF42YKfzEeqllfwgEMLQPg" extendedCase="_mtl8EKfyEeqllfwgEMLQPg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_jsH5sKfzEeqllfwgEMLQPg" name="Selezione And , Or, singolo "/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_15InQKf0EeqllfwgEMLQPg" memberEnd="_15JOUKf0EeqllfwgEMLQPg _15JOUaf0EeqllfwgEMLQPg">
+    <ownedEnd xmi:id="_15JOUKf0EeqllfwgEMLQPg" type="_ovgJcKfyEeqllfwgEMLQPg" association="_15InQKf0EeqllfwgEMLQPg"/>
+    <ownedEnd xmi:id="_15JOUaf0EeqllfwgEMLQPg" type="_jsH5sKfzEeqllfwgEMLQPg" association="_15InQKf0EeqllfwgEMLQPg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_6FDOEKf0EeqllfwgEMLQPg" name="Num caratteri &lt;x"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_6dIW4Kf0EeqllfwgEMLQPg" name="Num caratteri > x"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_61TmUKf0EeqllfwgEMLQPg" name="y&lt;Num caratteri >x"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_EHGh0Kf1EeqllfwgEMLQPg" name="Presenza stringa di caratteri"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_Gc2RMKf1EeqllfwgEMLQPg" name="Presenza file multimediale"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_Ik1RYKf1EeqllfwgEMLQPg" name="Not Presenza file multimediale"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_LmqDoKf1EeqllfwgEMLQPg" name="Not presenza stringa di caratteri"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_PpiqQKf1EeqllfwgEMLQPg" memberEnd="_PpjRUKf1EeqllfwgEMLQPg _PpjRUaf1EeqllfwgEMLQPg">
+    <ownedEnd xmi:id="_PpjRUKf1EeqllfwgEMLQPg" type="_jsH5sKfzEeqllfwgEMLQPg" association="_PpiqQKf1EeqllfwgEMLQPg"/>
+    <ownedEnd xmi:id="_PpjRUaf1EeqllfwgEMLQPg" type="_Gc2RMKf1EeqllfwgEMLQPg" association="_PpiqQKf1EeqllfwgEMLQPg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_QMbU4Kf1EeqllfwgEMLQPg" memberEnd="_QMb78Kf1EeqllfwgEMLQPg _QMb78af1EeqllfwgEMLQPg">
+    <ownedEnd xmi:id="_QMb78Kf1EeqllfwgEMLQPg" type="_jsH5sKfzEeqllfwgEMLQPg" association="_QMbU4Kf1EeqllfwgEMLQPg"/>
+    <ownedEnd xmi:id="_QMb78af1EeqllfwgEMLQPg" type="_EHGh0Kf1EeqllfwgEMLQPg" association="_QMbU4Kf1EeqllfwgEMLQPg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_QnZZoKf1EeqllfwgEMLQPg" memberEnd="_QnZZoaf1EeqllfwgEMLQPg _QnaAsKf1EeqllfwgEMLQPg">
+    <ownedEnd xmi:id="_QnZZoaf1EeqllfwgEMLQPg" type="_jsH5sKfzEeqllfwgEMLQPg" association="_QnZZoKf1EeqllfwgEMLQPg"/>
+    <ownedEnd xmi:id="_QnaAsKf1EeqllfwgEMLQPg" type="_6dIW4Kf0EeqllfwgEMLQPg" association="_QnZZoKf1EeqllfwgEMLQPg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_RHVd8Kf1EeqllfwgEMLQPg" memberEnd="_RHWFAKf1EeqllfwgEMLQPg _RHWFAaf1EeqllfwgEMLQPg">
+    <ownedEnd xmi:id="_RHWFAKf1EeqllfwgEMLQPg" type="_jsH5sKfzEeqllfwgEMLQPg" association="_RHVd8Kf1EeqllfwgEMLQPg"/>
+    <ownedEnd xmi:id="_RHWFAaf1EeqllfwgEMLQPg" type="_6FDOEKf0EeqllfwgEMLQPg" association="_RHVd8Kf1EeqllfwgEMLQPg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_RrnPsKf1EeqllfwgEMLQPg" memberEnd="_RrnPsaf1EeqllfwgEMLQPg _RrnPsqf1EeqllfwgEMLQPg">
+    <ownedEnd xmi:id="_RrnPsaf1EeqllfwgEMLQPg" type="_jsH5sKfzEeqllfwgEMLQPg" association="_RrnPsKf1EeqllfwgEMLQPg"/>
+    <ownedEnd xmi:id="_RrnPsqf1EeqllfwgEMLQPg" type="_61TmUKf0EeqllfwgEMLQPg" association="_RrnPsKf1EeqllfwgEMLQPg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_SJ6VQKf1EeqllfwgEMLQPg" memberEnd="_SJ68UKf1EeqllfwgEMLQPg _SJ68Uaf1EeqllfwgEMLQPg">
+    <ownedEnd xmi:id="_SJ68UKf1EeqllfwgEMLQPg" type="_jsH5sKfzEeqllfwgEMLQPg" association="_SJ6VQKf1EeqllfwgEMLQPg"/>
+    <ownedEnd xmi:id="_SJ68Uaf1EeqllfwgEMLQPg" type="_Ik1RYKf1EeqllfwgEMLQPg" association="_SJ6VQKf1EeqllfwgEMLQPg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_Sx9MsKf1EeqllfwgEMLQPg" memberEnd="_Sx9Msaf1EeqllfwgEMLQPg _Sx9Msqf1EeqllfwgEMLQPg">
+    <ownedEnd xmi:id="_Sx9Msaf1EeqllfwgEMLQPg" type="_jsH5sKfzEeqllfwgEMLQPg" association="_Sx9MsKf1EeqllfwgEMLQPg"/>
+    <ownedEnd xmi:id="_Sx9Msqf1EeqllfwgEMLQPg" type="_LmqDoKf1EeqllfwgEMLQPg" association="_Sx9MsKf1EeqllfwgEMLQPg"/>
+  </packagedElement>
+</uml:Model>
