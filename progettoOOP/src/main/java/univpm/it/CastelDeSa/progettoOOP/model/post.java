@@ -6,7 +6,7 @@ package univpm.it.CastelDeSa.progettoOOP.model;
  */
 public class post {
 	
-	private String  created_time;
+	private String createdTime;
 	private String message;
 	private String id;
 	
@@ -17,7 +17,7 @@ public class post {
 	 * @param m , contenuto del post
 	 */
 	public post(String c, String i, String m) {
-		this.created_time=c;
+		this.createdTime=c;
 		this.id=i;
 		this.message=m;
 	}
@@ -25,12 +25,12 @@ public class post {
 	 * getters/setters
 	 */
 
-	public String getCreated_time() {
-		return created_time;
+	public String getCreatedTime() {
+		return createdTime;
 	}
 
-	public void setCreated_time(String created_time) {
-		this.created_time = created_time;
+	public void setCreatedTime(String created_time) {
+		this.createdTime = created_time;
 	}
 
 	public String getId() {
@@ -54,7 +54,7 @@ public class post {
 	 */
 	@Override
 	public String toString() {
-		return "Message: " +this.getMessage()+"\nCreated time: "+this.getCreated_time()+"\n"+"id:"+this.getId();
+		return "Message: " +this.getMessage()+"\nCreated time: "+this.getCreatedTime()+"\n"+"id:"+this.getId();
 	}
 
 }
