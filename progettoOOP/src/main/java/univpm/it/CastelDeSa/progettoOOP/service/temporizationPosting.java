@@ -30,7 +30,7 @@ import univpm.it.CastelDeSa.progettoOOP.util.writing;
 public class temporizationPosting {
 
 	static SimpleDateFormat formatterFromPosting= new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
-	static SimpleDateFormat formatterFromRecord= new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss+SSSS");
+	static SimpleDateFormat formatterFromRecord= new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss+0000");
 
 	/**
 	 * Metodo calcolante
@@ -50,8 +50,8 @@ public class temporizationPosting {
 
 		//boolean test=isGreaterThanCurrentTime(newCreatedTime); NECESSITO EXCEPTION
 		String messageOut="";
-		String newCreatedTime=newPost.getCreatedTime();
-		String lastCreatedTime=post.get(0).getCreatedTime();
+		String newCreatedTime=newPost.getCreated_time();
+		String lastCreatedTime=post.get(0).getCreated_time();
 		newCreatedTime=calcoloDatePosting(newCreatedTime, lastCreatedTime);
 
 		//creazione istantanea dell'arrayList di post randomici + selezione del post
@@ -73,10 +73,11 @@ public class temporizationPosting {
 		writing.writingFile("C:\\Users\\vito\\Desktop\\jsonrandom.txt", postRandom);
 
 		//creazione post
-		String url="https://graph.facebook.com/107920467600716/feed?published=false&access_token=EAAkZCLlHE3QkBAAKWPfQkzb5q7IegjC70zpPwgDcurkFBX2NYwIeZBeuZAZAs2zVqcjZBPcmqLWuY6GFUCGFxjpcZAdbLTIi3Wl3OfIMuu0yWqFYYwywwYen0sfjK3ZCVGnAZCj8mt7IfVQlJZCrKtqq8AImsuGMuhZBOPigC5EyNTqAZDZD&message="+UriEncoder.encode(message)+"&scheduled_publish_time="+newPost.getCreatedTime();
+		String url="https://graph.facebook.com/107920467600716/feed?published=false&access_token=EAAkZCLlHE3QkBAAKWPfQkzb5q7IegjC70zpPwgDcurkFBX2NYwIeZBeuZAZAs2zVqcjZBPcmqLWuY6GFUCGFxjpcZAdbLTIi3Wl3OfIMuu0yWqFYYwywwYen0sfjK3ZCVGnAZCj8mt7IfVQlJZCrKtqq8AImsuGMuhZBOPigC5EyNTqAZDZD&message="+UriEncoder.encode(message)+"&scheduled_publish_time="+newPost.getCreated_time();
 		//...da finire, problemi con connessione per posting, otterrò anche un id
 		String indexPost=httpRequest.postRequest(url, newCreatedTime);
 		messageOut="Post pubblicato con l'id seguente: "+indexPost+"\n"+messageOut;
+		newCreatedTime+="+0000";
 
 		//qualora la richiesta fosse accettata -> inserimento post in arraylist post
 		post.add(0, new post(newCreatedTime,indexPost,message));

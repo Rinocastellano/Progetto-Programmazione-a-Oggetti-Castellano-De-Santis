@@ -82,8 +82,8 @@ public class controller {
 	 * @return oggetto statistica con specifica di informazione
 	 * @throws commandStatException
 	 */
-	@RequestMapping(value="statAllPost", method=RequestMethod.GET)
-	public stat statNumPost(@RequestParam(value="statNum") String spec) throws commandException {
+	@RequestMapping(value="stat", method=RequestMethod.GET)
+	public stat stat(@RequestParam(value="statNum") String spec) throws commandException {
 		statCalculate newStat= statService.statFormulation(spec, postStorage.posts);
 		return newStat.doStat();
 	}
@@ -97,9 +97,10 @@ public class controller {
 	 * @throws commandStatException
 	 * @throws betweenWrongValueException
 	 */
+	
 	@RequestMapping(value="filter", method=RequestMethod.POST)
-	public ArrayList<post> filter(@RequestParam(value="type")String type,@RequestBody HashMap<String,ArrayList<String>> map) throws commandException, betweenWrongValueException{
-			return andOrFilter.andOrFiltering(type, postStorage.posts, map);
+	public ArrayList<post> filter(@RequestParam(value="type")String type,@RequestBody HashMap<String,ArrayList<String>> map) throws commandException, betweenWrongValueException{	
+		return andOrFilter.andOrFiltering(type, postStorage.posts, map);
 	}
 	
 	/**
