@@ -1,17 +1,17 @@
 package univpm.it.CastelDeSa.progettoOOP.test;
 import  univpm.it.CastelDeSa.progettoOOP.*;
-import univpm.it.CastelDeSa.progettoOOP.exceptions.badReqException;
-import univpm.it.CastelDeSa.progettoOOP.exceptions.betweenWrongValueException;
-import univpm.it.CastelDeSa.progettoOOP.exceptions.commandException;
-import univpm.it.CastelDeSa.progettoOOP.exceptions.urlNotFoundException;
-import univpm.it.CastelDeSa.progettoOOP.filter.filterBt;
-import univpm.it.CastelDeSa.progettoOOP.model.post;
-import univpm.it.CastelDeSa.progettoOOP.service.filterService;
-import univpm.it.CastelDeSa.progettoOOP.service.statService;
-import univpm.it.CastelDeSa.progettoOOP.stat.statCalculate;
-import univpm.it.CastelDeSa.progettoOOP.util.httpRequest;
-import univpm.it.CastelDeSa.progettoOOP.util.parsing;
-import univpm.it.CastelDeSa.progettoOOP.util.reading;
+import univpm.it.CastelDeSa.progettoOOP.exceptions.BadReqException;
+import univpm.it.CastelDeSa.progettoOOP.exceptions.BetweenWrongValueException;
+import univpm.it.CastelDeSa.progettoOOP.exceptions.CommandException;
+import univpm.it.CastelDeSa.progettoOOP.exceptions.UrlNotFoundException;
+import univpm.it.CastelDeSa.progettoOOP.filter.FilterBt;
+import univpm.it.CastelDeSa.progettoOOP.model.Post;
+import univpm.it.CastelDeSa.progettoOOP.service.FilterService;
+import univpm.it.CastelDeSa.progettoOOP.service.StatService;
+import univpm.it.CastelDeSa.progettoOOP.stat.StatCalculate;
+import univpm.it.CastelDeSa.progettoOOP.util.HttpRequest;
+import univpm.it.CastelDeSa.progettoOOP.util.Parsing;
+import univpm.it.CastelDeSa.progettoOOP.util.Reading;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -27,13 +27,13 @@ import org.junit.jupiter.api.Test;
 
 class testExceptions {
 
-     private ArrayList<post>array= new ArrayList<post>();
-     private static parsing parsing=new parsing();
+     private ArrayList<Post>array= new ArrayList<Post>();
+     private static Parsing parsing=new Parsing();
      private String urlget;
      private String urlpost;
      private ArrayList<String>param= new ArrayList<String>();
      private String created_time;
-     private filterBt between;  
+     private FilterBt between;  
      private final String invalidUrl ="http://uhiuh";
      private final String invalidcommand1 ="weqweqweqw";
      private final String invalidcommand2 ="qeqweqweqe";
@@ -47,7 +47,7 @@ class testExceptions {
 	param.add("1000");
 	param.add("10");
 	created_time="2020-05-31T13:53:40+0000";
-	between=new filterBt(array,param);
+	between=new FilterBt(array,param);
 
 
 	}
@@ -57,26 +57,26 @@ class testExceptions {
 	}
 	@Test 
 	void test1(){
-		assertThrows(commandException.class, ()->statService.statFormulation(invalidcommand1,array));
-		assertThrows(commandException.class, ()->filterService.filterFormulation(invalidcommand2, array, param));
+		assertThrows(CommandException.class, ()->StatService.statFormulation(invalidcommand1,array));
+		assertThrows(CommandException.class, ()->FilterService.filterFormulation(invalidcommand2, array, param));
 	}
 	@Test
 	void test2() {
 
-		assertThrows(urlNotFoundException.class, ()->reading.readUrl(invalidUrl));
+		assertThrows(UrlNotFoundException.class, ()->Reading.readUrl(invalidUrl));
 
 
 	}
 	@Test
 	void test3() {
 
-		assertThrows(badReqException.class, ()->httpRequest.postRequest(urlpost, created_time));
+		assertThrows(BadReqException.class, ()->HttpRequest.postRequest(urlpost, created_time));
 
 
 	}
 	@Test
 	void test4() {
-	assertThrows(betweenWrongValueException.class, ()->between.doFilter());
+	assertThrows(BetweenWrongValueException.class, ()->between.doFilter());
 
 	}
 }

@@ -1,15 +1,15 @@
 package univpm.it.CastelDeSa.progettoOOP.test;
 import  univpm.it.CastelDeSa.progettoOOP.*;
-import univpm.it.CastelDeSa.progettoOOP.exceptions.badReqException;
-import univpm.it.CastelDeSa.progettoOOP.exceptions.betweenWrongValueException;
-import univpm.it.CastelDeSa.progettoOOP.exceptions.urlNotFoundException;
-import univpm.it.CastelDeSa.progettoOOP.filter.filterBt;
-import univpm.it.CastelDeSa.progettoOOP.model.post;
-import univpm.it.CastelDeSa.progettoOOP.service.filterService;
-import univpm.it.CastelDeSa.progettoOOP.service.statService;
-import univpm.it.CastelDeSa.progettoOOP.stat.statCalculate;
-import univpm.it.CastelDeSa.progettoOOP.util.parsing;
-import univpm.it.CastelDeSa.progettoOOP.util.reading;
+import univpm.it.CastelDeSa.progettoOOP.exceptions.BadReqException;
+import univpm.it.CastelDeSa.progettoOOP.exceptions.BetweenWrongValueException;
+import univpm.it.CastelDeSa.progettoOOP.exceptions.UrlNotFoundException;
+import univpm.it.CastelDeSa.progettoOOP.filter.FilterBt;
+import univpm.it.CastelDeSa.progettoOOP.model.Post;
+import univpm.it.CastelDeSa.progettoOOP.service.FilterService;
+import univpm.it.CastelDeSa.progettoOOP.service.StatService;
+import univpm.it.CastelDeSa.progettoOOP.stat.StatCalculate;
+import univpm.it.CastelDeSa.progettoOOP.util.Parsing;
+import univpm.it.CastelDeSa.progettoOOP.util.Reading;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -24,11 +24,11 @@ import org.junit.jupiter.api.Test;
 
 class testNullEquals {
 
-	 private reading read=new reading();
-     private ArrayList<post>array= new ArrayList<post>();
-     private parsing parsing=new parsing();
+	 private Reading read=new Reading();
+     private ArrayList<Post>array= new ArrayList<Post>();
+     private Parsing parsing=new Parsing();
      private String urlget;
-     private post post;
+     private Post post;
      private ArrayList<String> postRandom=new ArrayList<String>();
 
 	@BeforeEach
