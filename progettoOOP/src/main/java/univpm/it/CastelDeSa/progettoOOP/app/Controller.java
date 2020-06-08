@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fasterxml.jackson.databind.node.TextNode;
+
 import univpm.it.CastelDeSa.progettoOOP.exceptions.BadReqException;
 import univpm.it.CastelDeSa.progettoOOP.exceptions.BetweenWrongValueException;
 import univpm.it.CastelDeSa.progettoOOP.exceptions.CommandException;
@@ -66,8 +68,8 @@ public class Controller {
 	 * @throws FewStorageMessageException
 	 */
 	@RequestMapping(value="schedule", method=RequestMethod.POST)
-	public String schedulePost(@RequestBody String date) throws IOException, ParseException, URISyntaxException, BadReqException, NotFoundMethodException, FewStorageMessageException{
-		return TemporizationPosting.temporizzatedPosting(date, PostStorage.posts);
+	public String schedulePost(@RequestBody Post post) throws IOException, ParseException, URISyntaxException, BadReqException, NotFoundMethodException, FewStorageMessageException{
+		return TemporizationPosting.temporizzatedPosting(post.getCreated_time(), PostStorage.posts);
 	}
 	
 	/**

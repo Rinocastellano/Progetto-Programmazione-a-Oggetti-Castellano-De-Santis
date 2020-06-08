@@ -38,7 +38,6 @@ private ArrayList<Post> post=new ArrayList<Post>();
 		min=Collections.min(map.values());
 		StatNum stat= new StatNum();
 		stat.setMin(min);
-		stat.setSpec("lunghezza minima");
 		return stat;
 	}
 	

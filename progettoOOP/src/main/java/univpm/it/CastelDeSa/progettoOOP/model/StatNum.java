@@ -6,10 +6,10 @@ package univpm.it.CastelDeSa.progettoOOP.model;
  * @author Matteo De Santis
  */
 public class StatNum extends Stat {
-	private int avg;
-	private int min;
-	private int max;
-	private int numTotalePost;
+	private String avg;
+	private String min;
+	private String max;
+	private String numTotalePost;
 	/**
 	 * costruttore di default preso dalla superclasse stat
 	 */
@@ -26,45 +26,58 @@ public class StatNum extends Stat {
 	 */
 	public StatNum(String spec,int avg, int min, int max, int n) {
 		super(spec);
-		this.avg=avg;
-		this.max=max;
-		this.min=min;
-		this.numTotalePost=n;
+		this.avg=Integer.toString(avg);
+		this.max=Integer.toString(max);
+		this.min=Integer.toString(min);
+		this.numTotalePost=Integer.toString(n);
 	}
 /**
  * getters/setters
  * 
  */
-	public int getNumTotalePost() {
+	public String getNumTotalePost() {
 		return numTotalePost;
 	}
 
 	public void setNumTotalePost(int numTotalePost) {
-		this.numTotalePost = numTotalePost;
+		this.numTotalePost = Integer.toString(numTotalePost);
+		this.max=null;
+		this.min=null;
+		this.avg=null;
+		
 	}
 
-	public int getAvg() {
+	public String getAvg() {
 		return avg;
 	}
 
 	public void setAvg(int avg) {
-		this.avg = avg;
+		this.avg = Integer.toString(avg);
+		this.max=null;
+		this.min=null;
+		this.numTotalePost=null;
 	}
 
-	public int getMin() {
+	public String getMin() {
 		return min;
 	}
 
 	public void setMin(int min) {
-		this.min = min;
+		this.min = Integer.toString(min);
+		this.max=null;
+		this.avg=null;
+		this.numTotalePost=null;
 	}
 
-	public int getMax() {
+	public String getMax() {
 		return max;
 	}
 
 	public void setMax(int max) {
-		this.max = max;
+		this.max = Integer.toString(max);
+		this.avg=null;
+		this.min=null;
+		this.numTotalePost=null;
 	}
 	
 	

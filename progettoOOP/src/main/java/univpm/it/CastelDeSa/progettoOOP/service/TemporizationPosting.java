@@ -50,9 +50,8 @@ public class TemporizationPosting {
 
 		//boolean test=isGreaterThanCurrentTime(newCreatedTime); NECESSITO EXCEPTION
 		String messageOut="";
-		String newCreatedTime=date;
 		String lastCreatedTime=post.get(0).getCreated_time();
-		newCreatedTime=calcoloDatePosting(newCreatedTime, lastCreatedTime);
+		String newCreatedTime=calcoloDatePosting(date, lastCreatedTime);
 
 		//creazione istantanea dell'arrayList di post randomici + selezione del post
 		ArrayList<String> postRandom = Reading.readFile("C:\\Users\\vito\\Desktop\\jsonrandom.txt");

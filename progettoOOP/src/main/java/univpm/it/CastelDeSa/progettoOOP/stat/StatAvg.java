@@ -33,7 +33,7 @@ public class StatAvg implements StatCalculate{
 		 }
 		StatNum stat= new StatNum();
 		stat.setAvg(somma/n);
-		stat.setSpec("lunghezza media post");
+		System.out.println(stat);
 		return stat;
 	}
 

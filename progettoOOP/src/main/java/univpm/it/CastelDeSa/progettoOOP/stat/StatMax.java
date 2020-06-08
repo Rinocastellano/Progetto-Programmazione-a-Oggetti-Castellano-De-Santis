@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import univpm.it.CastelDeSa.progettoOOP.model.Post;
+import univpm.it.CastelDeSa.progettoOOP.model.Stat;
 import univpm.it.CastelDeSa.progettoOOP.model.StatNum;
 
 /**
@@ -39,10 +40,7 @@ public class StatMax implements StatCalculate {
 		max=Collections.max(map.values());
 		StatNum stat= new StatNum();
 		stat.setMax(max);
-		stat.setSpec("lunghezza massima");
 		return stat;
 		
-		
 }
-	
 }
