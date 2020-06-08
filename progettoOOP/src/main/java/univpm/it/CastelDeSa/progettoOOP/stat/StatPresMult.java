@@ -1,13 +1,8 @@
 package univpm.it.CastelDeSa.progettoOOP.stat;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 
 import univpm.it.CastelDeSa.progettoOOP.model.Post;
-import univpm.it.CastelDeSa.progettoOOP.model.Stat;
-import univpm.it.CastelDeSa.progettoOOP.model.StatNum;
 import univpm.it.CastelDeSa.progettoOOP.model.StatPres;
 
 /**

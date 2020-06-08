@@ -1,5 +1,5 @@
 package univpm.it.CastelDeSa.progettoOOP.test;
-import  univpm.it.CastelDeSa.progettoOOP.*;
+
 import univpm.it.CastelDeSa.progettoOOP.exceptions.BadReqException;
 import univpm.it.CastelDeSa.progettoOOP.exceptions.BetweenWrongValueException;
 import univpm.it.CastelDeSa.progettoOOP.exceptions.CommandException;
@@ -8,17 +8,15 @@ import univpm.it.CastelDeSa.progettoOOP.filter.FilterBt;
 import univpm.it.CastelDeSa.progettoOOP.model.Post;
 import univpm.it.CastelDeSa.progettoOOP.service.FilterService;
 import univpm.it.CastelDeSa.progettoOOP.service.StatService;
-import univpm.it.CastelDeSa.progettoOOP.stat.StatCalculate;
 import univpm.it.CastelDeSa.progettoOOP.util.HttpRequest;
 import univpm.it.CastelDeSa.progettoOOP.util.Parsing;
 import univpm.it.CastelDeSa.progettoOOP.util.Reading;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.net.URL;
 import java.util.ArrayList;
 
-import org.junit.jupiter.api.AfterAll;
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -33,7 +31,7 @@ class testExceptions {
      private String urlpost;
      private ArrayList<String>param= new ArrayList<String>();
      private String created_time;
-     private FilterBt between;  
+     private FilterBt between;
      private final String invalidUrl ="http://uhiuh";
      private final String invalidcommand1 ="weqweqweqw";
      private final String invalidcommand2 ="qeqweqweqe";
@@ -46,7 +44,7 @@ class testExceptions {
     array=parsing.run(urlget);
 	param.add("1000");
 	param.add("10");
-	created_time="2020-05-31T13:53:40+0000";
+	created_time="2020-05-31T13:53:40+0000ciao";
 	between=new FilterBt(array,param);
 
 

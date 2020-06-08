@@ -6,6 +6,7 @@ package univpm.it.CastelDeSa.progettoOOP.exceptions;
  * @author Matteo De Santis
  *
  */
+
 public class BadReqException extends Exception{
 
 	/**

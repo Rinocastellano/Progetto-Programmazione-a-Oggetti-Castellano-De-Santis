@@ -1,18 +1,10 @@
 package univpm.it.CastelDeSa.progettoOOP.app;
 
-
-import java.util.List;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.net.URL;
-import java.util.ArrayList;
-
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import univpm.it.CastelDeSa.progettoOOP.model.Post;
 import univpm.it.CastelDeSa.progettoOOP.service.PostStorage;
-import univpm.it.CastelDeSa.progettoOOP.util.Reading;
+
 
 @SpringBootApplication
 public class App {

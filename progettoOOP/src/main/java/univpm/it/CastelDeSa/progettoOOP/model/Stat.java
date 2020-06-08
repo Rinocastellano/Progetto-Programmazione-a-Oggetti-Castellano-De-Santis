@@ -1,7 +1,5 @@
 package univpm.it.CastelDeSa.progettoOOP.model;
 
-import java.net.MalformedURLException;
-import java.util.ArrayList;
 
 
 

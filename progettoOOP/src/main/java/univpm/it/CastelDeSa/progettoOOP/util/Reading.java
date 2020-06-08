@@ -63,6 +63,7 @@ public class Reading {
 		while((line=in.readLine())!=null) {
 			post.add(new String(line));
 		}
+		in.close();
 		return post;
 	}
 

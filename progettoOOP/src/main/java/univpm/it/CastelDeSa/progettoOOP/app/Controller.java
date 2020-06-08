@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import org.apache.hc.core5.http.ParseException;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -19,19 +18,14 @@ import univpm.it.CastelDeSa.progettoOOP.exceptions.CommandException;
 
 import univpm.it.CastelDeSa.progettoOOP.exceptions.FewStorageMessageException;
 import univpm.it.CastelDeSa.progettoOOP.exceptions.NotFoundMethodException;
-import univpm.it.CastelDeSa.progettoOOP.filter.*;
 import univpm.it.CastelDeSa.progettoOOP.model.Metadata;
 import univpm.it.CastelDeSa.progettoOOP.model.Post;
 import univpm.it.CastelDeSa.progettoOOP.model.Stat;
-import univpm.it.CastelDeSa.progettoOOP.model.StatNum;
 import univpm.it.CastelDeSa.progettoOOP.service.AndOrFilter;
-import univpm.it.CastelDeSa.progettoOOP.service.FilterService;
 import univpm.it.CastelDeSa.progettoOOP.service.PostStorage;
 import univpm.it.CastelDeSa.progettoOOP.service.StatService;
 import univpm.it.CastelDeSa.progettoOOP.service.TemporizationPosting;
-import univpm.it.CastelDeSa.progettoOOP.stat.StatAvg;
 import univpm.it.CastelDeSa.progettoOOP.stat.StatCalculate;
-import univpm.it.CastelDeSa.progettoOOP.stat.StatMax;
 
 /**
  * classe di controller per richieste localhost:8080

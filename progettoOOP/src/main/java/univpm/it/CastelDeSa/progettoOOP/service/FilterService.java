@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import univpm.it.CastelDeSa.progettoOOP.exceptions.CommandException;
 import univpm.it.CastelDeSa.progettoOOP.filter.Filter;
 import univpm.it.CastelDeSa.progettoOOP.model.Post;
-import univpm.it.CastelDeSa.progettoOOP.stat.StatCalculate;
 /**
  * classe calcolante il tipo di filtro da utilizzare
  * @author Rino Castellano

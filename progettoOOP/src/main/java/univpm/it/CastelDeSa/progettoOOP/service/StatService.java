@@ -6,7 +6,6 @@ import java.util.ArrayList;
 
 import univpm.it.CastelDeSa.progettoOOP.exceptions.CommandException;
 import univpm.it.CastelDeSa.progettoOOP.model.Post;
-import univpm.it.CastelDeSa.progettoOOP.model.StatNum;
 import univpm.it.CastelDeSa.progettoOOP.stat.StatCalculate;
 
 /**
