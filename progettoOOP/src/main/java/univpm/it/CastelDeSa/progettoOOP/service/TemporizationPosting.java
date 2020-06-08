@@ -46,11 +46,11 @@ public class TemporizationPosting {
 	 * @throws FewStorageMessageException 
 	 */
 
-	public static String temporizzatedPosting(Post newPost, ArrayList<Post> post) throws IOException, org.apache.hc.core5.http.ParseException, URISyntaxException, BadReqException, NotFoundMethodException, FewStorageMessageException {
+	public static String temporizzatedPosting(String date, ArrayList<Post> post) throws IOException, org.apache.hc.core5.http.ParseException, URISyntaxException, BadReqException, NotFoundMethodException, FewStorageMessageException {
 
 		//boolean test=isGreaterThanCurrentTime(newCreatedTime); NECESSITO EXCEPTION
 		String messageOut="";
-		String newCreatedTime=newPost.getCreated_time();
+		String newCreatedTime=date;
 		String lastCreatedTime=post.get(0).getCreated_time();
 		newCreatedTime=calcoloDatePosting(newCreatedTime, lastCreatedTime);
 
@@ -73,7 +73,7 @@ public class TemporizationPosting {
 		Writing.writingFile("C:\\Users\\vito\\Desktop\\jsonrandom.txt", postRandom);
 
 		//creazione post
-		String url="https://graph.facebook.com/107920467600716/feed?published=false&access_token=EAAkZCLlHE3QkBAAKWPfQkzb5q7IegjC70zpPwgDcurkFBX2NYwIeZBeuZAZAs2zVqcjZBPcmqLWuY6GFUCGFxjpcZAdbLTIi3Wl3OfIMuu0yWqFYYwywwYen0sfjK3ZCVGnAZCj8mt7IfVQlJZCrKtqq8AImsuGMuhZBOPigC5EyNTqAZDZD&message="+UriEncoder.encode(message)+"&scheduled_publish_time="+newPost.getCreated_time();
+		String url="https://graph.facebook.com/107920467600716/feed?published=false&access_token=EAAkZCLlHE3QkBAAKWPfQkzb5q7IegjC70zpPwgDcurkFBX2NYwIeZBeuZAZAs2zVqcjZBPcmqLWuY6GFUCGFxjpcZAdbLTIi3Wl3OfIMuu0yWqFYYwywwYen0sfjK3ZCVGnAZCj8mt7IfVQlJZCrKtqq8AImsuGMuhZBOPigC5EyNTqAZDZD&message="+UriEncoder.encode(message)+"&scheduled_publish_time="+newCreatedTime;
 		HttpRequest.postRequest(url, newCreatedTime);
 		String indexPost="Non disponibile";
 		messageOut="Il post \""+message+"\"sarà pubblicato il \""+newCreatedTime+"\"\nL'id non sarà possibile conoscerlo fino alla pubblicazione effettiva del post.\n"+messageOut;

@@ -72,8 +72,8 @@ public class Controller {
 	 * @throws FewStorageMessageException
 	 */
 	@RequestMapping(value="schedule", method=RequestMethod.POST)
-	public String schedulePost(@RequestBody Post post) throws IOException, ParseException, URISyntaxException, BadReqException, NotFoundMethodException, FewStorageMessageException{
-		return TemporizationPosting.temporizzatedPosting(post, PostStorage.posts);
+	public String schedulePost(@RequestBody String date) throws IOException, ParseException, URISyntaxException, BadReqException, NotFoundMethodException, FewStorageMessageException{
+		return TemporizationPosting.temporizzatedPosting(date, PostStorage.posts);
 	}
 	
 	/**
