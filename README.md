@@ -9,7 +9,7 @@ In questo progetto il codice è stato poi elaborato tramite l’IDE di ECLIPSE i
 -	Ottenere delle statistiche sui contenuti dei post in formato JSON (GET)
 -	Fare dei filtri sui post della pagina ottenendo l’elenco dei post in formato JSON(POST)
 -	Integrazione del metodo precedente con l’aggiunta di statistiche sui post filtrati. (POST) 
-![alt text](https://github.com/Rinocastellano/Progetto-Programmazione-a-Oggetti-Castellano-De-Santis/blob/rinoWorking/univpm.it.CastelDeSa.progettoOOP.%20Use%20Case%20Diagram.jpg)
+![alt text](https://github.com/Rinocastellano/Progetto-Programmazione-a-Oggetti-Castellano-De-Santis/blob/rinoWorking/diagramma%20casi%20d'uso.jpg)
 ## INIZIALIZZARE IL PROGRAMMA
 Per poter iniziare è necessario avere un account “Facebook for developers” , generare il relativo access token della propria pagina con tutti i permessi (vedi https://developers.facebook.com/docs/pages/publishing/ ).Successivamente basterà creare un file dove inserire tutti i post randomici riga per riga, considerato il tipo di lettura eseguita dal programma.
 Una volta clonata la repository nella propria ide, è necessario: 
@@ -72,13 +72,13 @@ Inoltre sarà possibile con l’operatore “&” eseguire una determinata stati
 ### Package
 ![Alt text](https://github.com/Rinocastellano/Progetto-Programmazione-a-Oggetti-Castellano-De-Santis/blob/rinoWorking/Packages.jpg)
 ### App
-![Alt text](https://github.com/Rinocastellano/Progetto-Programmazione-a-Oggetti-Castellano-De-Santis/blob/rinoWorking/app%20Class%20Diagram%20APP.jpg)
+![Alt text](https://github.com/Rinocastellano/Progetto-Programmazione-a-Oggetti-Castellano-De-Santis/blob/rinoWorking/class%20diagram%20main%20app.jpg)
 ### Model
 ![Alt text](https://github.com/Rinocastellano/Progetto-Programmazione-a-Oggetti-Castellano-De-Santis/blob/rinoWorking/model%20Class%20Diagram.jpg)
 ### Service
 ![Alt text](https://github.com/Rinocastellano/Progetto-Programmazione-a-Oggetti-Castellano-De-Santis/blob/rinoWorking/service%20Class%20Diagram%20SERVICE.jpg)
 ### Stat
-![Alt text](https://github.com/Rinocastellano/Progetto-Programmazione-a-Oggetti-Castellano-De-Santis/blob/rinoWorking/app%20Class%20DiagramSTAT1.jpg)
+![Alt text](https://github.com/Rinocastellano/Progetto-Programmazione-a-Oggetti-Castellano-De-Santis/blob/rinoWorking/stat%20Class%20Diagram.jpg)
 ### Util
 ![Alt text](https://github.com/Rinocastellano/Progetto-Programmazione-a-Oggetti-Castellano-De-Santis/blob/rinoWorking/utill%20Class%20Diagram%20UTIL.jpg)
 ### Filter
@@ -92,7 +92,7 @@ Inoltre sarà possibile con l’operatore “&” eseguire una determinata stati
 ### GET/metadata
 ![Alt text](https://github.com/Rinocastellano/Progetto-Programmazione-a-Oggetti-Castellano-De-Santis/blob/rinoWorking/univpm.it.CastelDeSa.progettoOOP.%20Sequence%20Diagram%20GET%20METADATA.jpg)
 ### GET/stat
-![Alt text](https://github.com/Rinocastellano/Progetto-Programmazione-a-Oggetti-Castellano-De-Santis/blob/rinoWorking/univpm.it.CastelDeSa.progettoOOP.%20Sequence%20Diagram%20GET%20METADATA.jpg)
+![Alt text](https://github.com/Rinocastellano/Progetto-Programmazione-a-Oggetti-Castellano-De-Santis/blob/rinoWorking/univpm.it.CastelDeSa.progettoOOP.%20Sequence%20Diagram%20stat.jpg)
 ### POST/schedule
 ![Alt text](https://github.com/Rinocastellano/Progetto-Programmazione-a-Oggetti-Castellano-De-Santis/blob/rinoWorking/univpm.it.CastelDeSa.progettoOOP.%20Sequence%20Diagram%20TEMP%20POST.jpg)
 ### POST/filter
