@@ -13,7 +13,7 @@ import univpm.it.CastelDeSa.progettoOOP.model.Post;
  * @author Matteo De Santis
  */
 public class FilterService {
-	private static String dir="univpm.it.CastelDeSa.progettoOOP.filter.filter";
+	private static String dir="univpm.it.CastelDeSa.progettoOOP.filter.Filter";
 	/**
 	 * Metodo creante la classe filter 
 	 * @param command, specifica per il filter utile alla creazione della classe

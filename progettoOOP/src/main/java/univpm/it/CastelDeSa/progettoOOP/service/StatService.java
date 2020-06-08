@@ -16,7 +16,7 @@ import univpm.it.CastelDeSa.progettoOOP.stat.StatCalculate;
  *  */
 public class StatService {
 	
-	private static String dir="univpm.it.CastelDeSa.progettoOOP.stat.stat";
+	private static String dir="univpm.it.CastelDeSa.progettoOOP.stat.Stat";
 	/**
 	 * Metodo calcolante la classe statistica utile per il service Stat
 	 * @param command, specifica per la statistica utile alla creazione della classe
