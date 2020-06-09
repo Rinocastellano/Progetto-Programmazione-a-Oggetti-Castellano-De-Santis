@@ -9,7 +9,7 @@ In questo progetto il codice è stato poi elaborato tramite l’IDE di ECLIPSE i
 -	Ottenere delle statistiche sui contenuti dei post in formato JSON (GET)
 -	Fare dei filtri sui post della pagina ed ottenere l’elenco dei post filtrati in formato JSON(POST)
 -	Integrazione del metodo precedente con l’aggiunta di statistiche sui post filtrati. (POST) 
-![alt text](https://github.com/Rinocastellano/Progetto-Programmazione-a-Oggetti-Castellano-De-Santis/blob/rinoWorking/diagramma%20casi%20d'uso.jpg)
+![alt text](https://github.com/Rinocastellano/Progetto-Programmazione-a-Oggetti-Castellano-De-Santis/blob/rinoWorking/Use%20Case/diagramma%20casi%20d'uso.jpg)
 ## INIZIALIZZARE IL PROGRAMMA
 Per poter iniziare è necessario avere un account “Facebook for developers” e generare il relativo access token della propria pagina con tutti i permessi richiesti(vedi https://developers.facebook.com/docs/pages/publishing/ ).Successivamente basterà creare un file dove inserire tutti i post randomici riga per riga, considerato il tipo di lettura eseguita dal programma.
 Una volta clonata la repository nella propria IDE, è necessario: 
@@ -73,35 +73,35 @@ Inoltre sarà possibile con l’operatore “&” eseguire una determinata stati
 
 ## Diagrammi delle classi
 ### Package
-![Alt text](https://github.com/Rinocastellano/Progetto-Programmazione-a-Oggetti-Castellano-De-Santis/blob/rinoWorking/Packages.jpg)
+![Alt text](https://github.com/Rinocastellano/Progetto-Programmazione-a-Oggetti-Castellano-De-Santis/blob/rinoWorking/Class%20Diagram/Packages.jpg)
 ### App
-![Alt text](https://github.com/Rinocastellano/Progetto-Programmazione-a-Oggetti-Castellano-De-Santis/blob/rinoWorking/class%20diagram%20main%20app.jpg)
+![Alt text](https://github.com/Rinocastellano/Progetto-Programmazione-a-Oggetti-Castellano-De-Santis/blob/rinoWorking/Class%20Diagram/class%20diagram%20main%20app.jpg)
 ### Model
-![Alt text](https://github.com/Rinocastellano/Progetto-Programmazione-a-Oggetti-Castellano-De-Santis/blob/rinoWorking/model%20Class%20Diagram.jpg)
+![Alt text](https://github.com/Rinocastellano/Progetto-Programmazione-a-Oggetti-Castellano-De-Santis/blob/rinoWorking/Class%20Diagram/model%20Class%20Diagram.jpg)
 ### Service
-![Alt text](https://github.com/Rinocastellano/Progetto-Programmazione-a-Oggetti-Castellano-De-Santis/blob/rinoWorking/service%20Class%20Diagram%20SERVICE.jpg)
+![Alt text](https://github.com/Rinocastellano/Progetto-Programmazione-a-Oggetti-Castellano-De-Santis/blob/rinoWorking/Class%20Diagram/service%20Class%20Diagram%20SERVICE.jpg)
 ### Stat
-![Alt text](https://github.com/Rinocastellano/Progetto-Programmazione-a-Oggetti-Castellano-De-Santis/blob/rinoWorking/stat%20Class%20Diagram.jpg)
+![Alt text](https://github.com/Rinocastellano/Progetto-Programmazione-a-Oggetti-Castellano-De-Santis/blob/rinoWorking/Class%20Diagram/stat%20Class%20Diagram.jpg)
 ### Util
-![Alt text](https://github.com/Rinocastellano/Progetto-Programmazione-a-Oggetti-Castellano-De-Santis/blob/rinoWorking/utill%20Class%20Diagram%20UTIL.jpg)
+![Alt text](https://github.com/Rinocastellano/Progetto-Programmazione-a-Oggetti-Castellano-De-Santis/blob/rinoWorking/Class%20Diagram/utill%20Class%20Diagram%20UTIL.jpg)
 ### Filter
-![Alt text](https://github.com/Rinocastellano/Progetto-Programmazione-a-Oggetti-Castellano-De-Santis/blob/rinoWorking/filter%20Class%20Diagram%20FILTER.jpg)
+![Alt text](https://github.com/Rinocastellano/Progetto-Programmazione-a-Oggetti-Castellano-De-Santis/blob/rinoWorking/Class%20Diagram/filter%20Class%20Diagram%20FILTER.jpg)
 ### Exception
-![Alt text](https://github.com/Rinocastellano/Progetto-Programmazione-a-Oggetti-Castellano-De-Santis/blob/rinoWorking/esceptions%20Class%20Diagram%20EXC.jpg)
+![Alt text](https://github.com/Rinocastellano/Progetto-Programmazione-a-Oggetti-Castellano-De-Santis/blob/rinoWorking/Class%20Diagram/esceptions%20Class%20Diagram%20EXC.jpg)
 
 ## Diagrammi delle sequenze
 ### GET/post
-![Alt text](https://github.com/Rinocastellano/Progetto-Programmazione-a-Oggetti-Castellano-De-Santis/blob/rinoWorking/univpm.it.CastelDeSa.progettoOOP.%20Sequence%20Diagram%20filter%20GET%20POST.jpg)
+![Alt text](https://github.com/Rinocastellano/Progetto-Programmazione-a-Oggetti-Castellano-De-Santis/blob/rinoWorking/Sequence%20Diagram/univpm.it.CastelDeSa.progettoOOP.%20Sequence%20Diagram%20filter%20GET%20POST.jpg)
 ### GET/metadata
-![Alt text](https://github.com/Rinocastellano/Progetto-Programmazione-a-Oggetti-Castellano-De-Santis/blob/rinoWorking/univpm.it.CastelDeSa.progettoOOP.%20Sequence%20Diagram%20GET%20METADATA.jpg)
-### GET/stat
-![Alt text](https://github.com/Rinocastellano/Progetto-Programmazione-a-Oggetti-Castellano-De-Santis/blob/rinoWorking/univpm.it.CastelDeSa.progettoOOP.%20Sequence%20Diagram%20stat.jpg)
+![Alt text](https://github.com/Rinocastellano/Progetto-Programmazione-a-Oggetti-Castellano-De-Santis/blob/rinoWorking/Sequence%20Diagram/univpm.it.CastelDeSa.progettoOOP.%20Sequence%20Diagram%20GET%20METADATA.jpg)
+### GET/stat?spec=
+![Alt text](https://github.com/Rinocastellano/Progetto-Programmazione-a-Oggetti-Castellano-De-Santis/blob/rinoWorking/Sequence%20Diagram/univpm.it.CastelDeSa.progettoOOP.%20Sequence%20Diagram%20stat.jpg)
 ### POST/schedule
-![Alt text](https://github.com/Rinocastellano/Progetto-Programmazione-a-Oggetti-Castellano-De-Santis/blob/rinoWorking/univpm.it.CastelDeSa.progettoOOP.%20Sequence%20Diagram%20TEMP%20POST.jpg)
-### POST/filter
-![Alt text](https://github.com/Rinocastellano/Progetto-Programmazione-a-Oggetti-Castellano-De-Santis/blob/rinoWorking/univpm.it.CastelDeSa.progettoOOP.%20Sequence%20Diagram%20post%20filter1.jpg)
-### POST/statFiltered
-![Alt text](https://github.com/Rinocastellano/Progetto-Programmazione-a-Oggetti-Castellano-De-Santis/blob/rinoWorking/univpm.it.CastelDeSa.progettoOOP.%20Sequence%20Diagram%20filter%20with%20stat.jpg)
+![Alt text](https://github.com/Rinocastellano/Progetto-Programmazione-a-Oggetti-Castellano-De-Santis/blob/rinoWorking/Sequence%20Diagram/univpm.it.CastelDeSa.progettoOOP.%20Sequence%20Diagram%20TEMP%20POST.jpg)
+### POST/filter?type=
+![Alt text](https://github.com/Rinocastellano/Progetto-Programmazione-a-Oggetti-Castellano-De-Santis/blob/rinoWorking/Sequence%20Diagram/univpm.it.CastelDeSa.progettoOOP.%20Sequence%20Diagram%20post%20filter1.jpg)
+### POST/statFiltered?type=_&spec=
+![Alt text](https://github.com/Rinocastellano/Progetto-Programmazione-a-Oggetti-Castellano-De-Santis/blob/rinoWorking/Sequence%20Diagram/univpm.it.CastelDeSa.progettoOOP.%20Sequence%20Diagram%20filter%20with%20stat.jpg)
 
 ## Contributors
 - Rino Castellano [https://github.com/Rinocastellano]
