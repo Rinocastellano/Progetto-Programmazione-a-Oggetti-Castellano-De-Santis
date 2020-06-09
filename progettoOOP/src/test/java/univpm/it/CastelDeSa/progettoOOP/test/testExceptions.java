@@ -22,7 +22,12 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 
-
+/**
+ * classe di test sulle eccezioni
+ * @author Castellano Rino
+ * @author De Santis Matteo
+ *
+ */
 class testExceptions {
 
      private ArrayList<Post>array= new ArrayList<Post>();
@@ -53,25 +58,33 @@ class testExceptions {
 	@AfterEach
 	void tearDown() throws Exception {
 	}
+	
+	/**
+	 * verifica del funzionamento eccezione CommandException, usato nel StatService, FilterService
+	 */
 	@Test 
 	void test1(){
 		assertThrows(CommandException.class, ()->StatService.statFormulation(invalidcommand1,array));
 		assertThrows(CommandException.class, ()->FilterService.filterFormulation(invalidcommand2, array, param));
 	}
+	/**
+	 * verifica del funzionamento eccezione UrlNotFoundException usato nel Reading
+	 */
 	@Test
 	void test2() {
 
 		assertThrows(UrlNotFoundException.class, ()->Reading.readUrl(invalidUrl));
-
-
 	}
+	/**
+	 * verifica del funzionamento eccezione BadReqException usato nel HttpRequest
+	 */
 	@Test
 	void test3() {
-
 		assertThrows(BadReqException.class, ()->HttpRequest.postRequest(urlpost, created_time));
-
-
 	}
+	/**
+	 * verifica del funzionamento eccezione BetweenWrongValueException usato nel Between filter
+	 */
 	@Test
 	void test4() {
 	assertThrows(BetweenWrongValueException.class, ()->between.doFilter());

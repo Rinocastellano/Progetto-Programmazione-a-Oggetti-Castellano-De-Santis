@@ -14,7 +14,12 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-
+/**
+ * classe di test 
+ * @author Castellano Rino
+ * @author De Santis Matteo
+ *
+ */
 class testNullEquals {
 
 	 private Reading read=new Reading();
@@ -25,7 +30,6 @@ class testNullEquals {
      private ArrayList<String> postRandom=new ArrayList<String>();
 
 	@BeforeEach
-
 	void setUp() throws Exception {
     urlget="https://graph.facebook.com/107920467600716/feed?access_token=EAAkZCLlHE3QkBAAKWPfQkzb5q7IegjC70zpPwgDcurkFBX2NYwIeZBeuZAZAs2zVqcjZBPcmqLWuY6GFUCGFxjpcZAdbLTIi3Wl3OfIMuu0yWqFYYwywwYen0sfjK3ZCVGnAZCj8mt7IfVQlJZCrKtqq8AImsuGMuhZBOPigC5EyNTqAZDZD";    
 	array=parsing.run(urlget);
@@ -36,16 +40,23 @@ class testNullEquals {
 	@AfterEach
 	void tearDown() throws Exception {
 	}
+	/**
+	 * test sul parsing affinchè non ritorni un val nullo
+	 */
     @Test
     void test1() {
     	assertNotNull(array);
-
     }
+    /**
+     * test sulla verifica dell'esistenza del post
+     */
     @Test
     void test2() {
     	assertNotNull(post);
-
     }
+    /**
+     * lettura file funzionante
+     */
     @Test
     void test3() {
 
