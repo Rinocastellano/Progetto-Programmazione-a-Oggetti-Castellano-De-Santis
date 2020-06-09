@@ -44,7 +44,7 @@ class testExceptions {
     array=parsing.run(urlget);
 	param.add("1000");
 	param.add("10");
-	created_time="2020-05-31T13:53:40+0000ciao";
+	created_time="2020-01-31T13:53:40+0000";
 	between=new FilterBt(array,param);
 
 

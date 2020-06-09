@@ -40,6 +40,7 @@ public class StatMax implements StatCalculate {
 		max=Collections.max(map.values());
 		StatNum stat= new StatNum();
 		stat.setMax(max);
+		stat.setSpec("Lunghezza max post");
 		return stat;
 		
 }
