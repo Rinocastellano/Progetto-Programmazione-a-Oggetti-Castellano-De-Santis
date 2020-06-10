@@ -27,7 +27,7 @@ Le seguenti tabelle indicano e spiegano tutte le possibili richieste da inserire
 |POST|	/schedule|	Postare su Facebook un post randomico a una certa data|
 |GET|	/stat|	Richiesta statistiche sui contenuti dei post|
 |POST|	/filter|	Eseguire un filtro sui post della pagina|
-|POST|	/statFiltered|	Eseguire una statistica su elenco di post filtrato|
+|POST|	/stat|	Eseguire una statistica su elenco di post filtrato|
 
 ### TEMPORIZATION POSTING
 È necessario l’inserimento della futura data di pubblicazione del post nel body secondo uno specifico formato JSON: 
@@ -58,6 +58,9 @@ Tali stringhe saranno aggiunte a localhost:8080.
 Inoltre sarà possibile con l’operatore “&” eseguire una determinata statistica dopo un filtraggio(vedi par. STATISTICHE POSSIBILI)
 
 
+*NOTA: nel caso di statistica su post filtrato, il parametro iniziale non è più "filter" ma "stat"! Il resto rimane uguale*
+
+
 
 #### FILTRI OPERATORI
 È analogo l’inserimento della prima lettera minuscola.
@@ -70,6 +73,15 @@ Inoltre sarà possibile con l’operatore “&” eseguire una determinata stati
 |InMult|	{“InMult”:[“”]}|	Post aventi contenuto multimediale (contenutoIn stringa irrilevante)|
 |NInMessage|	{“NInMessage”:[“stringa cercata”]}|	Post non aventi nel message la stringa inserita |
 |NInMult|	{“NInMult”:[“”]}|	Post non aventi contenuto multimediale(contenuto in stringa irrilevante)|
+
+##### Esempi di utilizzo di filtro
+- Ipotizziamo di voler effettuare un filtro multiplo di post che abbiano più di 200 caratteri e che non contengano la parola "Vasco" ed "Angels". Sulla riga dei parametri basta scrivere */filter?type=and*. Dentro il body invece elencare i tipi di filtri da voler inserire, in questo caso *{ "gt":["200"],"NInMessage":["Vasco","Angels"]}*
+- Se volessimo ottenere una statistica del post con meno caratteri dall'elenco di post filtrato precedentemente, basta riscrivere sulla riga dei parametri */stat?type=and&spec=min* e lasciare il body invariato.
+- Un altro esempio di filtraggio può essere sulla presenza di un determinato carattere, ad esempio "Marta", o di una lunghezza compresa tra 20 e 800. In tal caso sulla riga dei parametri si scriverà */filter?type=or* e nel body *{"inMessage":["Marta"], "bt":["20","800"]}*
+- Nel caso di filtro singolo, il value del type è indifferente basta che non coincida con *and* o *or*. Ad esempio se volessimo trovare un elenco di post con meno di 50 caratteri basterà scrivere sulla riga dei parametri */filter?type=default* e nel body *{"lt":["20"]}*
+
+
+*NOTA: SE SI VUOLE EFFETTUARE UNA STATISTICA SU POST FILTRATO VA USATO UN COMANDO "POST", PER UNA STATISTICA SU POST NON FILTRATO SERVE UN COMANDO "GET"*
 
 ## Diagrammi delle classi
 ### Package
@@ -85,7 +97,7 @@ Inoltre sarà possibile con l’operatore “&” eseguire una determinata stati
 ### Util
 ![Alt text](https://github.com/Rinocastellano/Progetto-Programmazione-a-Oggetti-Castellano-De-Santis/blob/rinoWorking/Class%20Diagram/utill%20Class%20Diagram%20UTIL.jpg)
 ### Filter
-![Alt text](https://github.com/Rinocastellano/Progetto-Programmazione-a-Oggetti-Castellano-De-Santis/blob/rinoWorking/Class%20Diagram/filter%20Class%20Diagram%20FILTER.jpg)
+![Alt text](https://github.com/Rinocastellano/Progetto-Programmazione-a-Oggetti-Castellano-De-Santis/blob/rinoWorking/Class%20Diagram/FILTRI%20CLASS%20DIAGRAM.jpg)
 ### Exception
 ![Alt text](https://github.com/Rinocastellano/Progetto-Programmazione-a-Oggetti-Castellano-De-Santis/blob/rinoWorking/Class%20Diagram/esceptions%20Class%20Diagram%20EXC.jpg)
 
