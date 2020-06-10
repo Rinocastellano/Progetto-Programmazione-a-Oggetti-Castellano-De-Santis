@@ -30,7 +30,6 @@ public class AndOrFilter {
 	public static ArrayList<Post> andOrFiltering(String type,ArrayList<Post> post, HashMap<String,ArrayList<String>> map) throws CommandException, BetweenWrongValueException{
 		ArrayList<Post> postFiltered2= new ArrayList<Post>();
 		ArrayList<Post> postFiltered1= new ArrayList<Post>();
-		int i=0;
 			ArrayList<Filter> filter= new ArrayList<Filter>();
 			for(Map.Entry<String, ArrayList<String>> entry : map.entrySet()) {
 				filter.add(FilterService.filterFormulation(entry.getKey(), post, entry.getValue()));

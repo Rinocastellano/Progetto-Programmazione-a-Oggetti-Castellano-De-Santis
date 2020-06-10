@@ -109,7 +109,7 @@ public class Controller {
 	 * @throws commandStatException
 	 * @throws BetweenWrongValueException
 	 */
-	@RequestMapping(value="statFiltered",method=RequestMethod.POST)
+	@RequestMapping(value="stat",method=RequestMethod.POST)
 	public Stat statFiltered(@RequestParam(value="type") String type,@RequestParam(value="spec") String stat, @RequestBody HashMap<String,ArrayList<String>> map) throws CommandException, BetweenWrongValueException {
 		ArrayList<Post> postFiltered=AndOrFilter.andOrFiltering(type, PostStorage.posts, map);
 		StatCalculate newStat= StatService.statFormulation(stat, postFiltered);

@@ -12,7 +12,6 @@ import univpm.it.CastelDeSa.progettoOOP.model.Post;
  *
  */
 public class FilterNInMult extends FilterIn implements Filter{
-	private ArrayList<Post> post= new ArrayList<Post>();
 	/**
 	 * costruttore
 	 * @param post arrayList di post
