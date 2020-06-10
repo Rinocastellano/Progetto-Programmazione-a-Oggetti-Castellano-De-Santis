@@ -107,6 +107,9 @@ public class TemporizationPosting {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		if(newPostFormatted==null) {
+			return "NULL";
+		}
 
 		if((newPostFormatted.getTime()-lastPostFormatted.getTime())<14400000 &&(newPostFormatted.getTime()-lastPostFormatted.getTime())>-14400000) {
 		Calendar calendar= Calendar.getInstance();
@@ -114,6 +117,7 @@ public class TemporizationPosting {
 		 calendar.add(Calendar.HOUR_OF_DAY, 4);
 		 newPostFormatted=calendar.getTime();
 		}
+		
 
 		return formatterFromPosting.format(newPostFormatted);
 	}
