@@ -27,12 +27,12 @@ public class FilterNInMult extends FilterIn implements Filter{
 		ArrayList<Post> postFiltered =new ArrayList<Post>();
 		postFiltered=post;
 		for(Iterator<Post> it= postFiltered.iterator();it.hasNext();) {
-			Post p= it.next();
-			if(p.getMessage()==null) {
-				it.remove();
+			for(Post p : post) {
+				if(p.getMessage()==null) {
+					post.add(p);
+					}
 			}
 		}
 		return postFiltered;
-	}
-
+		}
 }

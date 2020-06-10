@@ -1,7 +1,6 @@
 package univpm.it.CastelDeSa.progettoOOP.filter;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 import univpm.it.CastelDeSa.progettoOOP.model.Post;
 /**
@@ -24,14 +23,14 @@ public class FilterNInMessage extends FilterIn implements Filter {
 	 * metodo di filtraggio
 	 */
 	public  ArrayList<Post> doFilter(){
-		ArrayList<Post> postFiltered =new ArrayList<Post>();
-		postFiltered=post;
+		ArrayList<Post> postFiltered = new ArrayList<Post>();
 		for(String s : spec) {
-		for(Iterator<Post> it= postFiltered.iterator();it.hasNext();) {
-			Post p= it.next();
+		for(Post p: post) {
 			if(p.getMessage()!=null) {
-			if(p.getMessage().contains(s))
-				it.remove();
+			if(!p.getMessage().contains(s)) {
+				postFiltered.add(p);
+			}
+				
 			}
 		}
 		}

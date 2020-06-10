@@ -53,5 +53,6 @@ public class PostStorage {
     public static  ArrayList<Metadata> getMetadatas(){
     	return metadatas;
     }
+    
 }
 
