@@ -80,7 +80,7 @@ class testExceptions {
 	 */
 	@Test
 	void test3() {
-		assertThrows(BadReqException.class, ()->HttpRequest.postRequest(urlpost, created_time));
+		assertThrows(BadReqException.class, ()->HttpRequest.postRequest(urlget, created_time));
 	}
 	/**
 	 * verifica del funzionamento eccezione BetweenWrongValueException usato nel Between filter
