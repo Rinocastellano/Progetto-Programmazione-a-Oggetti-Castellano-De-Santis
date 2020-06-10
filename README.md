@@ -77,8 +77,8 @@ Inoltre sarà possibile con l’operatore “&” eseguire una determinata stati
 ##### Esempi di utilizzo di filtro
 - Ipotizziamo di voler effettuare un filtro multiplo di post che abbiano più di 200 caratteri e che non contengano la parola "Vasco" ed "Angels". Sulla riga dei parametri basta scrivere */filter?type=and*. Dentro il body invece elencare i tipi di filtri da voler inserire, in questo caso *{ "gt":["200"],"NInMessage":["Vasco","Angels"]}*
 - Se volessimo ottenere una statistica del post con meno caratteri dall'elenco di post filtrato precedentemente, basta riscrivere sulla riga dei parametri */stat?type=and&spec=min* e lasciare il body invariato.
-- Un altro esempio di filtraggio può essere sulla presenza di un determinato carattere, ad esempio "Marta", o di una lunghezza compresa tra 20 e 800. In tal caso sulla riga dei parametri si scriverà */filter?type=or* e nel body *{"inMessage":["Marta"], "bt":["20","800"]}*
-- Nel caso di filtro singolo, il value del type è indifferente basta che non coincida con *and* o *or*. Ad esempio se volessimo trovare un elenco di post con meno di 50 caratteri basterà scrivere sulla riga dei parametri */filter?type=default* e nel body *{"lt":["20"]}*
+- Un altro esempio di filtraggio può essere sulla presenza di una determinata stringa, ad esempio "Marta", o di una lunghezza di caratteri compresa tra 20 e 800. In tal caso sulla riga dei parametri si scriverà */filter?type=or* e nel body *{"inMessage":["Marta"], "bt":["20","800"]}*
+- Nel caso di filtro singolo, il value del type non deve coincidere con *and* o *or*. Ad esempio se si volesse trovare un elenco di post con meno di 50 caratteri basterà scrivere sulla riga dei parametri */filter?type=default* e nel body *{"lt":["20"]}*
 
 
 *NOTA: SE SI VUOLE EFFETTUARE UNA STATISTICA SU POST FILTRATO VA USATO UN COMANDO "POST", PER UNA STATISTICA SU POST NON FILTRATO SERVE UN COMANDO "GET"*
